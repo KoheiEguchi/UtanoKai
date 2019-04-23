@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+/*文を中央に置きフォントも設定*/
+h1, h2, h3, h4, p, div{
+	text-align: center;
+	font-family: “ヒラギノ明朝 Pro W3”, “Hiragino Mincho Pro”, serif;
+}
+
+/*ボタン周りの青線削除*/
+input[type="submit"], input[type="button"]{
+	outline: none;
+}
+
+/*折りたたみ部分の調整*/
+summary{
+	cursor: pointer;
+	outline: none;
+	text-align: center;
+}
+
+/*上に間を空ける*/
+.space{
+	margin-top: 100px;
+}
+
+/*歌の内容を縦書きにする*/
+.list{
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+	float: right;
+	position: relative;
+}
+
+/*個人情報ページへ飛ぶ俳号の表示*/
+.linkName{
+	color: #000080;
+}
+.linkName:hover{
+	text-decoration: none;
+	background-color: #faf0e6;
+	color: #000080;
+	border-radius: 10px;
+}
+
+/*高評価ボタン設定*/
+.linkGood{
+	color: #f08300;
+}
+.linkGood:hover{
+	text-decoration: none;
+	background-color: #a8c97f;
+	color: #f08300;
+	border-radius: 10px;
+}
+
+/*ここから歌の拡大関連*/
+.zoom{
+	transition: .3s;
+	-webkit-transform: scale(1.0);
+  	transform: scale(1.0);
+}
+.zoom:hover{
+	-webkit-transform: scale(1.05);
+  	transform: scale(1.05);
+  	z-index: 990;
+}
+/*ここまで歌の拡大関連*/
+
+/*文字を白くする*/
+.whiteWord{
+	color: white;
+}
+
+.lists{
+	display: inline;
+}
+
+/*退会画面での表示*/
+.delete{
+	color: red;
+	font-size: 120%;
+	font-weight: bold;
+}
+
+/*歌の削除ボタン設定*/
+.deleteHaiku{
+	writing-mode: initial;
+	transform: rotate(90deg);
+	margin-right: -30%;
+	margin-top: 30%;
+}
