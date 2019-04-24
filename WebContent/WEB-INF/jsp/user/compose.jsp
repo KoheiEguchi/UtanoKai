@@ -16,6 +16,27 @@
 			<jsp:include page="../include/title.jsp" flush="true" />
 			<jsp:include page="../include/msg.jsp" flush="true" />
 			<h3 class="py-3">新たに詠む</h3>
+			<details>
+				<summary>季語一覧</summary>
+				<div class="row">
+					<div class="col-1"></div>
+					<div class="col-10">
+						<ul class="nav nav-tabs">
+							<li class="nav-item w-25"><a href="#spring" class="nav-link active" data-toggle="tab">春</a></li>
+							<li class="nav-item w-25"><a href="#summer" class="nav-link" data-toggle="tab">夏</a></li>
+							<li class="nav-item w-25"><a href="#autumn" class="nav-link" data-toggle="tab">秋</a></li>
+							<li class="nav-item w-25"><a href="#winter" class="nav-link" data-toggle="tab">冬</a></li>
+						</ul>
+						<div class="tab-content">
+							<div id="spring" class="tab-pane py-4 active"><jsp:include page="../include/spring.jsp" flush="true" /></div>
+							<div id="summer" class="tab-pane py-4"><jsp:include page="../include/summer.jsp" flush="true" /></div>
+							<div id="autumn" class="tab-pane py-4"><jsp:include page="../include/autumn.jsp" flush="true" /></div>
+							<div id="winter" class="tab-pane py-4"><jsp:include page="../include/winter.jsp" flush="true" /></div>
+						</div>
+					</div>
+					<div class="col-1"></div>
+				</div>
+			</details>
 			<form action="Compose?name=${name}" method="POST">
 				<div class="row py-4">
 					<div class="col-md-4 order-md-3 h-auto pt-3 composeBg composeTwist">
