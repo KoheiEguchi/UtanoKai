@@ -45,12 +45,14 @@ summary{
 /*高評価ボタン設定*/
 .linkGood{
 	color: #f08300;
+	font-size: 120%;
 }
 .linkGood:hover{
-	text-decoration: none;
-	background-color: #a8c97f;
 	color: #f08300;
+	font-size: 120%;
+	background-color: #87cefa;
 	border-radius: 10px;
+	text-decoration: none;
 }
 
 /*ここから歌の拡大関連*/
