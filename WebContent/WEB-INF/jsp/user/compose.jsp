@@ -15,7 +15,7 @@
 		<div class="main">
 			<jsp:include page="../include/title.jsp" flush="true" />
 			<jsp:include page="../include/msg.jsp" flush="true" />
-			<h3 class="py-3">新たに詠む</h3>
+			<h3 id="top" class="py-3">新たに詠む</h3>
 			<details>
 				<summary>季語一覧</summary>
 				<!-- 季語参考・きごさい歳時記 -->
@@ -28,7 +28,7 @@
 							<li class="nav-item w-25 itemAutumn"><a href="#autumn" class="nav-link navAutumn" data-toggle="tab">秋</a></li>
 							<li class="nav-item w-25 itemWinter"><a href="#winter" class="nav-link navWinter" data-toggle="tab">冬</a></li>
 						</ul>
-						<div class="tab-content mb-4">
+						<div class="tab-content mb-1">
 							<div id="spring" class="tab-pane active springTab"><jsp:include page="../include/spring.jsp" flush="true" /></div>
 							<div id="summer" class="tab-pane summerTab"><jsp:include page="../include/summer.jsp" flush="true" /></div>
 							<div id="autumn" class="tab-pane autumnTab"><jsp:include page="../include/autumn.jsp" flush="true" /></div>
@@ -37,6 +37,7 @@
 					</div>
 					<div class="col-1"></div>
 				</div>
+				<p><a href="#top"><input class="btn btn-secondary shadow mb-4" type="button" value="一番上へ戻る"></a></p>
 			</details>
 			<form action="Compose?name=${name}" method="POST">
 				<div class="row py-4">
