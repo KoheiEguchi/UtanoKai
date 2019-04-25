@@ -18,6 +18,12 @@ summary{
 	text-align: center;
 }
 
+/*タブ表示の文字*/
+.nav-link{
+	color: black;
+	font-family: “ヒラギノ明朝 Pro W3”, “Hiragino Mincho Pro”, serif;
+}
+
 /*上に間を空ける*/
 .space{
 	margin-top: 100px;
@@ -73,6 +79,7 @@ summary{
 	color: white;
 }
 
+/*横並び表示を整える*/
 .lists{
 	display: inline;
 }

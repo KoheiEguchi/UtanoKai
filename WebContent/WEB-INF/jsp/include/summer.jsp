@@ -8,13 +8,14 @@
 </head>
 <body>
 	<ul class="nav nav-tabs">
-		<li class="nav-item w-25"><a href="#allSum" class="nav-link active" data-toggle="tab">三夏(夏全体)</a></li>
-		<li class="nav-item w-25"><a href="#may" class="nav-link" data-toggle="tab">初夏(5月)</a></li>
-		<li class="nav-item w-25"><a href="#jun" class="nav-link" data-toggle="tab">仲夏(6月)</a></li>
-		<li class="nav-item w-25"><a href="#jul" class="nav-link" data-toggle="tab">晩夏(7月)</a></li>
+		<li class="nav-item w-25 itemSummer"><a href="#allSum" class="nav-link active navSummer" data-toggle="tab">三夏(全夏)</a></li>
+		<li class="nav-item w-25 itemSummer"><a href="#may" class="nav-link navSummer" data-toggle="tab">初夏(五月)</a></li>
+		<li class="nav-item w-25 itemSummer"><a href="#jun" class="nav-link navSummer" data-toggle="tab">仲夏(六月)</a></li>
+		<li class="nav-item w-25 itemSummer"><a href="#jul" class="nav-link navSummer" data-toggle="tab">晩夏(七月)</a></li>
 	</ul>
 	<div class="tab-content">
-		<div id="allSum" class="tab-pane py-4 active">
+		<div id="allSum" class="tab-pane px-4 py-4 active summerTab">
+			<div class="h4 mb-4">三夏の季語</div>
 			<p>【時候】</p>
 			<p>明易　暑き日　暑し　涼し　夏　夏の暁　夏の夕　夏の夜　夏の宵　短夜　晩夏</p>
 			<br>
@@ -58,7 +59,8 @@
 				名護蘭　茄子の花　夏薊　夏蕪　夏草　夏桑　夏木立　夏大根　夏菜　夏葱　夏蜜柑　夏虫　夏柳　夏蓬　日日草　鼠黐の花　野牡丹　蠅虎　パセリ　パパイヤ　万緑　美女桜　
 				一つ葉　姫芭蕉　ひゆ　蛭蓆　海蘿　ベゴニア　ペチュニア　真菰　柾の花　松落葉　松葉菊　水草の花　葎　八重葎　柳蘭　ユーカリの木　辣韮　竜舌蘭　緑陰　病葉　山葵の花</p>
 		</div>
-		<div id="may" class="tab-pane py-4">
+		<div id="may" class="tab-pane px-4 py-4 summerTab">
+			<div class="h4 mb-4">初夏の季語</div>
 			<p>【時候】</p>
 			<p>卯月　五月　小満　初夏　清和　夏浅し　夏の朝　夏めく　薄暑　麦の秋　立夏　若夏</p>
 			<br>
@@ -92,7 +94,8 @@
 				マロニエの花　万年草　蜜柑の花　水木の花　都草　深山樒の花　麦　麦の黒穂　結葉　黐(もち)の花　夜叉柄杓　雪割草　楪の花　柚の花　ゆりの木の花　余花　利休梅　
 				ルピナス　連理草　若楓　若葉</p>
 		</div>
-		<div id="jun" class="tab-pane py-4">
+		<div id="jun" class="tab-pane px-4 py-4 summerTab">
+			<div class="h4 mb-4">仲夏の季語</div>
 			<p>【時候】</p>
 			<p>夏至　皐月　田植時　仲夏　梅雨寒　入梅　白夜　半夏生　芒種　六月</p>
 			<br>
@@ -126,7 +129,8 @@
 				飛燕草　末央柳　菱の花　鵯上戸の花　枇杷　昼顔　紅の花　芸香　菩提樹の花　蛍袋　木天蓼の花　檀の花　虫取撫子　木斛の花　藻の花　矢車菊　破れ傘　山牛蒡の花　楊桃　
 				水芭蕉　虎耳草　山桜桃の実　百合の花　ラベンダー　若竹</p>
 		</div>
-		<div id="jul" class="tab-pane py-4">
+		<div id="jul" class="tab-pane px-4 py-4 summerTab">
+			<div class="h4 mb-4">晩夏の季語</div>
 			<p>【時候】</p>
 			<p>秋近し　秋を待つ　炎暑　炎昼　極暑　三伏　七月　小暑　溽暑　盛夏　大暑　梅雨明　土用　夏の果　夏深し　熱帯夜　腐草蛍となる　水無月　みなづき尽　炎ゆ　灼く　夜の秋　冷夏</p>
 			<br>

@@ -8,13 +8,14 @@
 </head>
 <body>
 	<ul class="nav nav-tabs">
-		<li class="nav-item w-25"><a href="#allSpr" class="nav-link active" data-toggle="tab">三春(春全体)</a></li>
-		<li class="nav-item w-25"><a href="#feb" class="nav-link" data-toggle="tab">初春(2月)</a></li>
-		<li class="nav-item w-25"><a href="#mar" class="nav-link" data-toggle="tab">仲春(3月)</a></li>
-		<li class="nav-item w-25"><a href="#apr" class="nav-link" data-toggle="tab">晩春(4月)</a></li>
+		<li class="nav-item w-25 itemSpring"><a href="#allSpr" class="nav-link active navSpring" data-toggle="tab">三春(全春)</a></li>
+		<li class="nav-item w-25 itemSpring"><a href="#feb" class="nav-link navSpring" data-toggle="tab">初春(二月)</a></li>
+		<li class="nav-item w-25 itemSpring"><a href="#mar" class="nav-link navSpring" data-toggle="tab">仲春(三月)</a></li>
+		<li class="nav-item w-25 itemSpring"><a href="#apr" class="nav-link navSpring" data-toggle="tab">晩春(四月)</a></li>
 	</ul>
 	<div class="tab-content">
-		<div id="allSpr" class="tab-pane py-4 active">
+		<div id="allSpr" class="tab-pane px-4 py-4 active springTab">
+			<div class="h4 mb-4">三春の季語</div>
 			<p>【時候】</p>
 			<p>暖か　麗か　朧月夜　木の芽時　春暁　春昼　遅日　長閑　春　春の朝　春の暮　春の霜　春の日　春の夕　春の宵　春の夜　春日和　春北斗　春三日月　日永</p>
 			<br>
@@ -44,7 +45,8 @@
 				三宝柑　シクラメン　春菊　春林　白藻　沈丁花　菫　芹　種芋　萵苣　角叉　椿　鶏冠菜　薺(なずな)の花　香菫　ネーブル　八朔柑　春椎茸　春菜　春の苺　
 				春の草　春の蜜柑　鹿尾菜　雛菊　古草　へご　防風　三葉芹　海松　海雲　蓬　若布</p>
 		</div>
-		<div id="feb" class="tab-pane py-4">
+		<div id="feb" class="tab-pane px-4 py-4 springTab">
+			<div class="h4 mb-4">初春の季語</div>
 			<p>【時候】</p>
 			<p>魚氷に上る　雨水　おれづみ　獺魚を祭る　寒明　旧正月　冴返る　春寒　初春　早春　遅春　二月　二月尽　春浅し　春まけて　春めく　余寒　立春</p>
 			<br>
@@ -68,7 +70,8 @@
 			<p>岩海苔　梅　黄梅　鬼縛の花　片栗の花　桔梗の芽　如月菜　烏芋　黒文字の花　紅梅　駒返る草　桜島大根　山茱萸の花　下萌　羊歯萌ゆ　末黒の芒　洲浜草　節分草　
 				ちゃるめる草　蓴生ふ　猫の目草　猫柳　海苔　はこべ　薔薇の芽　赤楊の花　蕗の薹　菠薐草　牡丹の芽　盆梅　松雪草　真菜　金縷梅　水灌菜　壬生菜　ミモザ</p>
 		</div>
-		<div id="mar" class="tab-pane py-4">
+		<div id="mar" class="tab-pane px-4 py-4 springTab">
+			<div class="h4 mb-4">仲春の季語</div>
 			<p>【時候】</p>
 			<p>如月　啓蟄　三月　春社　春分　鷹化して鳩と為る　仲春　初朔日　彼岸　龍天に登る</p>
 			<br>
@@ -101,7 +104,8 @@
 				土筆　蔦の芽　角組む荻　芽立ち　茅花　土佐水木　苗代茱萸　韮　蒜　野蒜　貝母の花　榛の花　初桜　初花　花簪　春大根　彼岸桜　蘖　一人静　姫踊子草　房咲水仙　
 				双葉　真菰の芽　松菜　水草生ふ　三椏の花　木蓮　ものの芽　柳の芽　楊梅の花　雪間草　雪柳　嫁菜　喇叭水仙　柳絮　令法　連翹　若紫　分葱　蕨</p>
 		</div>
-		<div id="apr" class="tab-pane py-4">
+		<div id="apr" class="tab-pane px-4 py-4 springTab">
+			<div class="h4 mb-4">晩春の季語</div>
 			<p>【時候】</p>
 			<p>蛙の目借り時　暮の春　穀雨　三月尽　四月　清明　田鼠化して鶉と為る　夏近し　苗代時　八十八夜　花冷え　春暑し　春惜しむ　春深し　晩春　弥生　花時　行く春</p>
 			<br>

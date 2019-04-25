@@ -8,13 +8,14 @@
 </head>
 <body>
 	<ul class="nav nav-tabs">
-		<li class="nav-item w-25"><a href="#allAut" class="nav-link active" data-toggle="tab">三秋(秋全体)</a></li>
-		<li class="nav-item w-25"><a href="#aug" class="nav-link" data-toggle="tab">初秋(8月)</a></li>
-		<li class="nav-item w-25"><a href="#sep" class="nav-link" data-toggle="tab">仲秋(9月)</a></li>
-		<li class="nav-item w-25"><a href="#oct" class="nav-link" data-toggle="tab">晩秋(10月)</a></li>
+		<li class="nav-item w-25 itemAutumn"><a href="#allAut" class="nav-link active navAutumn" data-toggle="tab">三秋(全秋)</a></li>
+		<li class="nav-item w-25 itemAutumn"><a href="#aug" class="nav-link navAutumn" data-toggle="tab">初秋(八月)</a></li>
+		<li class="nav-item w-25 itemAutumn"><a href="#sep" class="nav-link navAutumn" data-toggle="tab">仲秋(九月)</a></li>
+		<li class="nav-item w-25 itemAutumn"><a href="#oct" class="nav-link navAutumn" data-toggle="tab">晩秋(十月)</a></li>
 	</ul>
 	<div class="tab-content">
-		<div id="allAut" class="tab-pane py-4 active">
+		<div id="allAut" class="tab-pane px-4 py-4 active autumnTab">
+			<div class="h4 mb-4">三秋の季語</div>
 			<p>【時候】</p>
 			<p>秋　秋麗　秋湿　秋澄む　秋の朝　秋の暮　秋の昼　秋の夜　秋の宵　秋旱　爽やか　秋気　秋暁　千秋楽　身に入む　夜長　律の調べ</p>
 			<br>
@@ -41,7 +42,8 @@
 			<p>青蜜柑　秋草　秋桑　秋の七草　稲　牛膝　芋　狗尾草　陸稲　荻　オクラ　尾花　雄ひじは　何首烏芋　萱　川苔　カンナ　菊　草の花　草の穂　草の実　鶏頭　猿の腰掛　椎茸　
 				自然薯　秋果　数珠玉　生姜　芒　茅　月夜茸　仏掌薯　蔦　露草　唐辛子　毒茸　梨　葉鶏頭　糸瓜　初茸　弁慶草　木天蓼　零余子　藪虱　薯蕷　夜蒔胡瓜</p>
 		</div>
-		<div id="aug" class="tab-pane py-4">
+		<div id="aug" class="tab-pane px-4 py-4 autumnTab">
+			<div class="h4 mb-4">初秋の季語</div>
 			<p>【時候】</p>
 			<p>秋され　秋めく　禾すなはち登る　寒蝉鳴く　残暑　処暑　新涼　鷹鳥を祭る　天地始めて粛す　八月　白露降る　初秋　文月　立秋　涼風至る</p>
 			<br>
@@ -74,7 +76,8 @@
 				蓖麻　刀豆　巴草　棗の実　撫子　錦草　ぬめり草　鼠の尾　野稗　萩　芭蕉　薄荷の花　鳩麦　はまなすの実　馬鈴薯　楸　鵯花(ひよどりばな)　富士薊　藤袴　芙蓉　鬼灯　鳳仙花　
 				星草　ホップ　松虫草　千屈菜　茗荷の花　木槿　郁子　めはじき　桃　矢の根草　藪枯(やぶからし)　藪蘭　夕顔の実　夜顔</p>
 		</div>
-		<div id="sep" class="tab-pane py-4">
+		<div id="sep" class="tab-pane px-4 py-4 autumnTab">
+			<div class="h4 mb-4">仲秋の季語</div>
 			<p>【時候】</p>
 			<p>秋彼岸　かりがね寒き　九月　羣鳥羞を養ふ　玄鳥帰る　鴻雁来る　秋社　秋分　蟄虫(ちつちゅう)戸を坏(ふさ)ぐ　仲秋　二百十日　白露　八朔　葉月　冷やか　水始めて涸る　
 				雷声を収む　龍淵に潜む</p>
@@ -107,7 +110,8 @@
 				衝羽根　釣船草　玉蜀黍　木賊　鳥兜　中抜大根　苦瓜　野菊　野葡萄　蓮の実　八朔梅　初紅葉　浜菊　稗　風船葛　茯苓　藤豆　葡萄　芙蓉の実　緑豆　紅茸　木瓜の実　
 				杜鵑草　舞茸　真菰の花　間引菜　曼珠沙華　水引の花　溝蕎麦　めなもみ　桃吹く　模様びゆ　柳散る　山薊　山葡萄　敗荷　蘭　龍胆　早稲　棉　吾亦紅</p>
 		</div>
-		<div id="oct" class="tab-pane py-4">
+		<div id="oct" class="tab-pane px-4 py-4 autumnTab">
+			<div class="h4 mb-4">晩秋の季語</div>
 			<p>【時候】</p>
 			<p>秋惜しむ　秋寒　秋土用　秋深し　朝寒　うそ寒　寒露　菊黄花あり　九月尽　暮の秋　鴻雁来賓す　十月　冷まじ　雀蛤となる　霜降　草木零落す　そぞろ寒　
 				蟄虫咸俯(ちつちゅうみなふ)す　長月　肌寒　晩秋　冬隣　豺(やまいぬ)獣を祭る　漸寒　行く秋　夜寒</p>

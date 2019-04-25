@@ -8,13 +8,14 @@
 </head>
 <body>
 	<ul class="nav nav-tabs">
-		<li class="nav-item w-25"><a href="#allWin" class="nav-link active" data-toggle="tab">三冬(冬全体)</a></li>
-		<li class="nav-item w-25"><a href="#nov" class="nav-link" data-toggle="tab">初冬(11月)</a></li>
-		<li class="nav-item w-25"><a href="#dec" class="nav-link" data-toggle="tab">仲冬(12月),暮</a></li>
-		<li class="nav-item w-25"><a href="#jan" class="nav-link" data-toggle="tab">晩冬(1月),新年</a></li>
+		<li class="nav-item w-25 itemWinter"><a href="#allWin" class="nav-link active navWinter" data-toggle="tab">三冬(全冬)</a></li>
+		<li class="nav-item w-25 itemWinter"><a href="#nov" class="nav-link navWinter" data-toggle="tab">初冬(十一月)</a></li>
+		<li class="nav-item w-25 itemWinter"><a href="#dec" class="nav-link navWinter" data-toggle="tab">仲冬(十二月)・暮</a></li>
+		<li class="nav-item w-25 itemWinter"><a href="#jan" class="nav-link navWinter" data-toggle="tab">晩冬(一月)・新年</a></li>
 	</ul>
 	<div class="tab-content">
-		<div id="allWin" class="tab-pane py-4 active">
+		<div id="allWin" class="tab-pane px-4 py-4 active winterTab">
+			<div class="h4 mb-4">三冬の季語</div>
 			<p>【時候】</p>
 			<p>冱つ　鐘氷る　凍る　寒し　冴ゆ　霜夜　短日　冷たし　冬　冬暖　冬ざれ　冬の朝　冬の暮　冬の夜</p>
 			<br>
@@ -53,7 +54,8 @@
 				裸木　冬苺　冬柏　冬枯　冬木　冬木の桜　冬木立　冬珊瑚　冬山椒　冬薔薇　冬蔦　冬菜　冬の草　冬芽　冬林檎　冬蕨　ブロッコリ　椪柑　松藻　万両　蜜柑　深山樒　室咲　
 				芽キャベツ　藪柑子　龍の玉　侘助　冬桜</p>
 		</div>
-		<div id="nov" class="tab-pane py-4">
+		<div id="nov" class="tab-pane px-4 py-4 winterTab">
+			<div class="h4 mb-4">初冬の季語</div>
 			<p>【時候】</p>
 			<p>神無月　小春　十一月　小雪　冬浅し　冬めく　水始めて氷る　立冬　冬の日</p>
 			<br>
@@ -80,13 +82,14 @@
 			<p>【植物】</p>
 			<p>銀杏落葉　帰り花　柿落葉　寒葵　寒竹の子　寒蘭　山茶花　茶の花　石蕗の花　柊の花　枇杷の花　冬葵　冬紅葉　朴落葉　麦の芽　紅葉散る　八手の花</p>
 		</div>
-		<div id="dec" class="tab-pane py-4">
+		<div id="dec" class="tab-pane winterTab">
 			<ul class="nav nav-tabs">
-				<li class="nav-item w-50"><a href="#dec1" class="nav-link active" data-toggle="tab">仲冬(12月)</a></li>
-				<li class="nav-item w-50"><a href="#eve" class="nav-link" data-toggle="tab">暮</a></li>
+				<li class="nav-item w-50 itemWinter"><a href="#dec1" class="nav-link active navWinter" data-toggle="tab">仲冬(12月)</a></li>
+				<li class="nav-item w-50 itemWinter"><a href="#eve" class="nav-link navWinter" data-toggle="tab">暮</a></li>
 			</ul>
 			<div class="tab-content">
-				<div id="dec1" class="tab-pane py-4 active">
+				<div id="dec1" class="tab-pane px-4 py-4 active winterTab">
+					<div class="h4 mb-4">仲冬の季語</div>
 					<p>【時候】</p>
 					<p>一陽の嘉節　霜月　十二月　朔旦冬至　大雪　仲冬　冬至　宮線を添ふ</p>
 					<br>
@@ -110,7 +113,8 @@
 					<p>【植物】</p>
 					<p>甘蔗の花　クリスマスローズ　蝦蛄葉仙人掌　冬至梅　ポインセチア</p>
 				</div>
-				<div id="eve" class="tab-pane py-4">
+				<div id="eve" class="tab-pane px-4 py-4 winterTab">
+					<div class="h4 mb-4">暮の季語</div>
 					<p>【時候】</p>
 					<p>大晦日　数へ日　小晦日　師走　年惜しむ　年の内　年の暮　年の夜　行く年</p>
 					<br>
@@ -133,13 +137,14 @@
 				</div>
 			</div>
 		</div>
-		<div id="jan" class="tab-pane py-4">
+		<div id="jan" class="tab-pane winterTab">
 			<ul class="nav nav-tabs">
-				<li class="nav-item w-50"><a href="#jan1" class="nav-link active" data-toggle="tab">晩冬(1月)</a></li>
-				<li class="nav-item w-50"><a href="#new" class="nav-link" data-toggle="tab">新年</a></li>
+				<li class="nav-item w-50 itemWinter"><a href="#jan1" class="nav-link active navWinter" data-toggle="tab">晩冬(1月)</a></li>
+				<li class="nav-item w-50 itemWinter"><a href="#new" class="nav-link navWinter" data-toggle="tab">新年</a></li>
 			</ul>
 			<div class="tab-content">
-				<div id="jan1" class="tab-pane py-4 active">
+				<div id="jan1" class="tab-pane px-4 py-4 active winterTab">
+				<div class="h4 mb-4">晩冬の季語</div>
 					<p>【時候】</p>
 					<p>一月　寒土用　寒の入　寒の内　寒波　厳寒　三寒四温　しばれる　小寒　節季　節分　大寒　大呂　年内立春　春近し　春隣　春待つ　晩冬　日脚伸ぶ　冬尽く　冬深し</p>
 					<br>
@@ -165,7 +170,8 @@
 					<p>【植物】</p>
 					<p>寒独活　寒木瓜　水仙　早梅　花野菜　葉牡丹　冬菫　冬椿　冬の梅　冬萌　雪折　臘梅</p>
 				</div>
-				<div id="new" class="tab-pane py-4">
+				<div id="new" class="tab-pane px-4 py-4 winterTab">
+					<div class="h4 mb-4">新年の季語</div>
 					<p>【時候】</p>
 					<p>五日　女正月　元日　小正月　旧年　去年　去年今年　今年　小年　三が日　正月　人日　新年　七日　七日正月　二十日正月　初春　初三十日　春永　二日　仏正月　
 						松過　松の内　三日　六日　睦月　宵の年　四日</p>
