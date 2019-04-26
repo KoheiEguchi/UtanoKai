@@ -18,7 +18,7 @@
 			<h3 id="top" class="py-3">新たに詠む</h3>
 			<details>
 				<summary>季語一覧</summary>
-				<!-- 季語参考・きごさい歳時記 -->
+				<!-- 季語参考：きごさい歳時記 -->
 				<div class="row">
 					<div class="col-1"></div>
 					<div class="col-10">
