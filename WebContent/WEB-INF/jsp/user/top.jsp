@@ -31,7 +31,6 @@
 					<div class="row tops">
 						<div class="col-md-6 col-xs-12 order-md-2 bg-success shadow list zoom">
 							<a class="linkMenuHaiku whiteHover" href="List?genre=1">
-								<!-- <img src="img/haiku.png" width="150" height="150"> -->
 								<div class="col-2 h3 font-weight-normal">俳句・川柳</div>
 								<c:forEach items="${newHaiku}" var="haiku">
 									<div class="col-1 text-left py-3">${haiku.strComposeDate} ${haiku.strComposeTime}</div>
@@ -60,7 +59,6 @@
 						</div>
 						<div class="col-md-6 col-xs-12 order-md-1 bg-info shadow list zoom">
 							<a class="linkMenuTanka blackHover" href="List?genre=2">
-								<!-- <img src="img/tanka.png" width="150" height="150"> -->
 								<div class="col-2 h3 font-weight-normal">短歌</div>
 								<c:forEach items="${newTanka}" var="tanka">
 									<div class="col-1 text-left py-3">${tanka.strComposeDate} ${tanka.strComposeTime}</div>
@@ -91,7 +89,6 @@
 					<div class="row tops">
 						<div class="col-md-6 col-xs-12 order-md-2 bg-warning shadow list zoom">
 							<a class="linkMenuChoka blackHover" href="List?genre=3">
-								<!-- <img src="img/choka.png" width="150" height="150"> -->
 								<div class="col-2 h3 font-weight-normal">長歌</div>
 								<c:forEach items="${newChoka}" var="choka">
 									<div class="col-1 text-left py-3">${choka.strComposeDate} ${choka.strComposeTime}</div>
@@ -120,7 +117,6 @@
 						</div>
 						<div class="col-md-6 col-xs-12 order-md-1 bg-danger shadow list zoom">
 							<a class="linkMenuDodoitsu whiteHover" href="List?genre=4">
-								<!-- <img src="img/dodoitsu.png" width="150" height="150"> -->
 								<div class="col-2 h3 font-weight-normal">都々逸</div>
 								<c:forEach items="${newDodoitsu}" var="dodoitsu">
 									<div class="col-1 text-left py-3">${dodoitsu.strComposeDate} ${dodoitsu.strComposeTime}	</div>
