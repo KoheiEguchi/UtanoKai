@@ -50,8 +50,9 @@ public class List extends HttpServlet {
 				genre = Integer.parseInt(strGenre);
 			}
 			//選ばれた種類の歌を取得
+			String order = "new";
 			HaikuDAO dao = new HaikuDAO();
-			ArrayList<HaikuBean> list = dao.selectList(genre);
+			ArrayList<HaikuBean> list = dao.selectList(genre, order);
 			request.setAttribute("list", list);
 			
 			//genreからgenreNameを取得
@@ -59,6 +60,7 @@ public class List extends HttpServlet {
 			
 			request.setAttribute("genre", genre);
 			request.setAttribute("genreName", genreName);
+			request.setAttribute("order", "新着順");
 					
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user/list.jsp");
 			dispatcher.forward(request,response);
@@ -73,23 +75,43 @@ public class List extends HttpServlet {
 		//歌の削除から戻ってきた場合
 		if(session.getAttribute("genre") != null) {
 			doGet(request, response);
-		//俳号で検索する場合
+		//検索、並び替えの場合
 		}else {
 			request.setCharacterEncoding("UTF-8");
 			
-			String name = request.getParameter("name");
 			String strGenre = request.getParameter("genre");
 			int genre = Integer.parseInt(strGenre);
 			
-			//入力された俳号の歌を取得
 			HaikuDAO dao = new HaikuDAO();
-			ArrayList<HaikuBean> searchList = dao.searchList(name, genre);
-			//一つも見つからなかった場合
-			if(searchList.size() == 0) {
-				request.setAttribute("msg", "当てはまる俳号の方の歌は見つかりませんでした。");
-			//見つかった場合
+			
+			String order = request.getParameter("order");
+			//並び替えの場合
+			if(order != null) {
+				ArrayList<HaikuBean> list = dao.selectList(genre, order);
+				request.setAttribute("list", list);
+				//基準を表示
+				if(order.equals("new")) {
+					request.setAttribute("order", "新しい順");
+				}else if(order.equals("old")) {
+					request.setAttribute("order", "古い順");
+				}else if(order.equals("good")) {
+					request.setAttribute("order", "高評価順");
+				}else {
+					request.setAttribute("order", "低評価順");
+				}
+			//検索の場合
 			}else {
-				request.setAttribute("list", searchList);
+				String name = request.getParameter("name");
+				
+				//入力された俳号の歌を取得
+				ArrayList<HaikuBean> searchList = dao.searchList(name, genre);
+				//一つも見つからなかった場合
+				if(searchList.size() == 0) {
+					request.setAttribute("msg", "当てはまる俳号の方の歌は見つかりませんでした。");
+				//見つかった場合
+				}else {
+					request.setAttribute("list", searchList);
+				}
 			}
 			
 			//genreからgenreNameを取得

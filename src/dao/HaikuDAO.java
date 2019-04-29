@@ -65,12 +65,26 @@ public class HaikuDAO extends DAOConnection{
 		return goodHaiku;
 	}
 		
-	//全句を取得
-	public ArrayList<HaikuBean> selectList(int genre){
+	//指定された種類の歌を取得
+	public ArrayList<HaikuBean> selectList(int genre, String order){
 		ArrayList<HaikuBean> list = new ArrayList<HaikuBean>();
 		try {
 			conn = getConnection();
-			ps = conn.prepareStatement("SELECT * FROM haiku WHERE genre = ? ORDER BY compose_date DESC, compose_time DESC");
+			String sql = "SELECT * FROM haiku WHERE genre = ? ORDER BY ";
+			//新しい順の場合
+			if(order.equals("new")) {
+				sql = sql + "compose_date DESC, compose_time DESC";
+			//古い順の場合
+			}else if(order.equals("old")) {
+				sql = sql + "compose_date ASC, compose_time ASC";
+			//高評価順の場合
+			}else if(order.equals("good")){
+				sql = sql + "good DESC";
+			//低評価順の場合
+			}else {
+				sql = sql + "good ASC";
+			}
+			ps = conn.prepareStatement(sql);
 			ps.setInt(1, genre);
 			rs = ps.executeQuery();
 			

@@ -37,8 +37,11 @@
 			<form action="List?genre=${genre}" method="POST">
 				<jsp:include page="../include/searchForm.jsp" flush="true" />
 			</form>
+			<form action="List?genre=${genre}" method="POST">
+				<jsp:include page="../include/orderSelect.jsp" flush="true" />
+			</form>
 			<div class="bg-secondary py-1">
-				<h4 class="font-weight-normal whiteWord">${genreName}の一覧</h4>
+				<h4 class="font-weight-normal whiteWord">${genreName}の一覧(${order})</h4>
 			</div>
 			<div class="row">
 				<c:forEach items="${list}" var="list" varStatus="listNum">

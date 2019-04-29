@@ -7,6 +7,8 @@
 	<title>サイト名</title>
 </head>
 <body>
-	<div class="h1 py-4">歌の会</div>
+	<div class="jumbotron">
+		<div class="h1">歌の会</div>
+	</div>
 </body>
 </html>

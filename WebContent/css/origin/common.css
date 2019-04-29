@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+/* .jumbotron{
+	 background:url(title.jpg) center no-repeat;
+	 background-size: cover;
+} */
+
 /*文を中央に置きフォントも設定*/
 h1, h2, h3, h4, p, div{
 	text-align: center;
