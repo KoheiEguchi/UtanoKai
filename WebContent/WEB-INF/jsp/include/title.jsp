@@ -7,8 +7,12 @@
 	<title>サイト名</title>
 </head>
 <body>
-	<div class="jumbotron">
-		<div class="h1">歌の会</div>
-	</div>
+	<a class="titleWord" href="Top">
+		<div class="jumbotron title">
+			<div class="display-4 text-dark">歌の会</div>
+			<br>
+			<div class="h3 text-dark">皆が織り成す　歌香り立つ</div>
+		</div>		
+	</a>
 </body>
 </html>

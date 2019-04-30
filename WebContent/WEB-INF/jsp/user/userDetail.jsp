@@ -360,7 +360,29 @@
 				<c:if test="${loginOk == null}">
 					<p>情報変更</p>
 					<form action="UserDetail" method="POST">
-						<jsp:include page="../include/loginForm.jsp" flush="true" />
+						<div class="row">
+							<div class="col-1"></div>
+							<div class="col-10">
+								<div class="row py-2">
+									<div class="col-md-3 col-xs-1"></div>
+									<div class="col-md-2 col-xs-12 font-weight-bold text-left border-bottom border-dark">俳号</div>
+									<div class="col-md-4 col-xs-12 text-right border-bottom border-dark">
+										<input type="text" name="name" size="20" placeholder="俳号">
+									</div>
+									<div class="col-md-3 col-xs-1"></div>
+								</div>
+								<div class="row py-2">
+									<div class="col-md-3 col-xs-1"></div>
+									<div class="col-md-2 col-xs-12 font-weight-bold text-left border-bottom border-dark">合言葉(英数字のみ)</div>
+									<div class="col-md-4 col-xs-12 text-right border-bottom border-dark">
+										<input type="password" name="password" size="20" placeholder="合言葉">
+									</div>
+									<div class="col-md-3 col-xs-1"></div>
+								</div>
+							</div>
+							<div class="col-1"></div>
+						</div>
+						<%-- <jsp:include page="../include/loginForm.jsp" flush="true" /> --%>
 						<p class="my-4"><input class="btn btn-success btn-lg shadow" type="submit" value="認証"></p>
 					</form>	
 				</c:if>
