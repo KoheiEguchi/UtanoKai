@@ -2,7 +2,7 @@
 
 /*ここからサイト名表示関連*/
 .title{
-	background:url(../../img/title.jpg) center no-repeat;
+	background: url(../../img/title.jpg) center no-repeat;
 	background-size: cover;
 }
 .titleWord:hover{
@@ -35,11 +35,6 @@ summary{
 	font-family: “ヒラギノ明朝 Pro W3”, “Hiragino Mincho Pro”, serif;
 	display: flex;
     height: 100%;
-}
-
-/*上に間を空ける*/
-.space{
-	margin-top: 100px;
 }
 
 /*歌の内容を縦書きにする*/

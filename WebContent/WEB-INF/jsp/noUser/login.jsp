@@ -11,7 +11,7 @@
 	<div id="loaded" class="container">
 		<jsp:include page="../include/header.jsp" flush="true" />
 		<div class="main">
-			<h1 class="space">入室の前に</h1>
+			<h1 class="mt-4">入室の前に</h1>
 			<jsp:include page="../include/msg.jsp" flush="true" />
 			<p class="py-2">俳号と合言葉をお教えください。</p>
 			<form action="Login" method="POST">

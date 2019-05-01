@@ -45,9 +45,9 @@ public class UserDetail extends HttpServlet {
 			if(name == "") {
 				name = (String)session.getAttribute("name");
 			}
-			//登録、更新日時を取得
+			//登録、更新日時、ひとことを取得
 			UserDAO uDao = new UserDAO();
-			ArrayList<UserBean> userList = uDao.userDate(name);
+			ArrayList<UserBean> userList = uDao.userData(name);
 			request.setAttribute("userList", userList);
 			//閲覧者がこれまでに詠んだ歌を取得
 			HaikuDAO dao = new HaikuDAO();
@@ -93,74 +93,88 @@ public class UserDetail extends HttpServlet {
 		HttpSession session = request.getSession();
 		request.setCharacterEncoding("UTF-8");
 		
-		String loginOk = request.getParameter("loginOk");
-		//情報変更前に認証
-		if(loginOk == null) {
-			//俳号と合言葉を取得
+		//ひとこと更新の場合
+		if(request.getParameter("greetChange") != null) {
+			String greet = request.getParameter("greet");
 			String name = request.getParameter("name");
-			String password = request.getParameter("password");
 			
-			//空欄がある場合
-			if(name == "" || password == "") {
-				request.setAttribute("msg", "俳号と合言葉を共にお教えください。");
-				doGet(request, response);
-			//空欄なく入力できている場合
-			}else {
-				//合言葉を暗号化
-				String safetyPassword = PasswordUtil.getSafetyPassword(password, name);
-				UserDAO dao = new UserDAO();
-				int id = 0;
-				id = dao.dataChangeCheck(name, safetyPassword);
-				//俳号と合言葉が正しい場合
-				if(id != 0) {
-					request.setAttribute("id", id);
-					request.setAttribute("loginOk", "loginOk");
-					request.setAttribute("myData", "myData");
-					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user/userDetail.jsp");
-					dispatcher.forward(request,response);
-				//正しくない場合
-				}else {
-					request.setAttribute("msg", "正しくお教えください。");
-					doGet(request, response);
-				}
-			}
-		//認証後
+			UserDAO dao = new UserDAO();
+			dao.userGreet(greet, name);
+			
+			request.setAttribute("msg", "ひとことを更新しました。");
+			doGet(request, response);
+		//情報変更の場合
 		}else {
-			String name = request.getParameter("name");
-			String password1 = request.getParameter("password1");
-			String password2 = request.getParameter("password2");
-			String strId = request.getParameter("id");
-			int id = Integer.parseInt(strId);
-			
-			String password = "";
-			//空欄がある場合
-			if(name == "" || password1 == "" || password2 == "") {
-				request.setAttribute("msg", "全てお書きください。");
-				doGet(request, response);
-			//空欄がない場合
-			}else {
-				//合言葉確認
-				if(password1.equals(password2)) {
-					password = password1;
-					//合言葉に英数字以外が使われている場合
-					if(Common.passwordJpCheck(password) == false) {
-						request.setAttribute("msg", "合言葉には英数字以外使えません。");
-						doGet(request, response);
-					//英数字のみの場合
+			String loginOk = request.getParameter("loginOk");
+			//情報変更前に認証
+			if(loginOk == null) {
+				//俳号と合言葉を取得
+				String name = request.getParameter("name");
+				String password = request.getParameter("password");
+				
+				//空欄がある場合
+				if(name == "" || password == "") {
+					request.setAttribute("msg", "俳号と合言葉を共にお教えください。");
+					doGet(request, response);
+				//空欄なく入力できている場合
+				}else {
+					//合言葉を暗号化
+					String safetyPassword = PasswordUtil.getSafetyPassword(password, name);
+					UserDAO dao = new UserDAO();
+					int id = 0;
+					id = dao.dataChangeCheck(name, safetyPassword);
+					//俳号と合言葉が正しい場合
+					if(id != 0) {
+						request.setAttribute("id", id);
+						request.setAttribute("loginOk", "loginOk");
+						request.setAttribute("myData", "myData");
+						RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user/userDetail.jsp");
+						dispatcher.forward(request,response);
+					//正しくない場合
 					}else {
-						//合言葉を暗号化
-						String safetyPassword = PasswordUtil.getSafetyPassword(password, name);
-						UserDAO dao = new UserDAO();
-						dao.userUpdate(name, safetyPassword, id);
-							
-						request.setAttribute("msg", "情報を変更しました。");
-						session.setAttribute("name", name);
+						request.setAttribute("msg", "正しくお教えください。");
 						doGet(request, response);
 					}
-				//合言葉が合わない場合
-				}else {
-					request.setAttribute("msg", "合言葉が違っています。");
+				}
+			//認証後
+			}else {
+				String name = request.getParameter("name");
+				String password1 = request.getParameter("password1");
+				String password2 = request.getParameter("password2");
+				String greet = request.getParameter("greet");
+				String strId = request.getParameter("id");
+				int id = Integer.parseInt(strId);
+				
+				String password = "";
+				//空欄がある場合
+				if(name == "" || password1 == "" || password2 == "") {
+					request.setAttribute("msg", "全てお書きください。");
 					doGet(request, response);
+				//空欄がない場合
+				}else {
+					//合言葉確認
+					if(password1.equals(password2)) {
+						password = password1;
+						//合言葉に英数字以外が使われている場合
+						if(Common.passwordJpCheck(password) == false) {
+							request.setAttribute("msg", "合言葉には英数字以外使えません。");
+							doGet(request, response);
+						//英数字のみの場合
+						}else {
+							//合言葉を暗号化
+							String safetyPassword = PasswordUtil.getSafetyPassword(password, name);
+							UserDAO dao = new UserDAO();
+							dao.userUpdate(name, safetyPassword, greet, id);
+								
+							request.setAttribute("msg", "情報を変更しました。");
+							session.setAttribute("name", name);
+							doGet(request, response);
+						}
+					//合言葉が合わない場合
+					}else {
+						request.setAttribute("msg", "合言葉が違っています。");
+						doGet(request, response);
+					}
 				}
 			}
 		}

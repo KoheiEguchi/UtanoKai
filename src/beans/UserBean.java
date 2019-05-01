@@ -11,12 +11,13 @@ public class UserBean {
 	private Time createTime;
 	private Date updateDate;
 	private Time updateTime;
+	private String greet;
 	
 	public UserBean() {
 		
 	}
 	
-	public UserBean(int id, String name, String password, Date createDate, Time createTime, Date updateDate, Time updateTime) {
+	public UserBean(int id, String name, String password, Date createDate, Time createTime, Date updateDate, Time updateTime, String greet) {
 		this.id = id;
 		this.name = name;
 		this.password = password;
@@ -24,6 +25,7 @@ public class UserBean {
 		this.createTime = createTime;
 		this.updateDate = updateDate;
 		this.updateTime = updateTime;
+		this.greet = greet;
 	}
 
 	//以下アクセサ
@@ -68,5 +70,11 @@ public class UserBean {
 	}
 	public void setUpdateTime(Time updateTime) {
 		this.updateTime = updateTime;
+	}
+	public String getGreet() {
+		return this.greet;
+	}
+	public void setGreet(String greet) {
+		this.greet = greet;
 	}
 }

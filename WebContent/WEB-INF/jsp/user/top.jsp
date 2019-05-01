@@ -231,16 +231,15 @@
 							<div class="col-md-4 col-xs-12 py-4 goodChoka shadow list zoom">
 								<div class="row">
 									<a class="linkMenuChoka blackHover" href="List?genre=3">
-										<div class="col-2"></div>
 										<div class="col-1 text-left py-3">${choka.strComposeDate} ${choka.strComposeTime}</div>
-										<div class="col-3">
+										<div class="col-5">
 											<div class="text-left py-3 font-weight-bold">${choka.haiku}</div>
 											<div class="text-right">
 												<object><a class="linkName" href="UserDetail?name=${choka.composer}">${choka.composer}</a></object>
 											</div>
 										</div>
 										<div class="col-3">${choka.comment}</div>
-										<div class="col-1">
+										<div class="col-3">
 											<c:if test="${name != choka.composer}">
 												<p class="text-right">
 													<object>
@@ -252,7 +251,6 @@
 												<p class="text-right">${choka.good}人から高評価されました</p>
 											</c:if>
 										</div>
-										<div class="col-2"></div>
 									</a>
 								</div>
 							</div>

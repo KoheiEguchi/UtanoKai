@@ -63,11 +63,30 @@
 								<div class="col-md-3 col-xs-1"></div>
 							</div>
 							<br>
+							<form action="UserDetail?loginOk&name=${name}&greetChange" method="POST">
+								<div class="row">
+									<div class="col-md-3 col-xs-1"></div>
+									<div class="col-md-1 col-xs-5 font-weight-bold text-left border-bottom border-dark">ひとこと</div>
+									<c:if test="${composerName == null}">
+										<div class="col-md-1 col-xs-5 border-bottom border-dark">
+											<input class="btn btn-success shadow" type="submit" value="書き込む">
+										</div>
+										<div class="col-md-4 col-xs-12 text-right border-bottom border-dark">
+											<input class="text-right" type="text" name="greet" size="35" value="${user.greet}" placeholder="ご自由にひとことどうぞ">
+										</div>
+									</c:if>
+									<c:if test="${composerName != null}">
+										<div class="col-md-5 col-xs-12 text-right border-bottom border-dark">${user.greet}</div>
+									</c:if>
+									<div class="col-md-3 col-xs-1"></div>
+								</div>
+							</form>
+							<br>
 						</div>
 						<div class="col-1"></div>
 					</div>
 				</c:forEach>
-				<details>
+				<details open>
 					<summary>これまで詠まれた歌</summary>
 					<div class="bg-secondary py-1"><h3 class="whiteWord">俳句・川柳</h3></div>
 					<div class="row">

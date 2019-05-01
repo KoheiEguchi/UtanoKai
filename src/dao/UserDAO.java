@@ -76,12 +76,12 @@ public class UserDAO extends DAOConnection{
 		}
 	}
 	
-	//閲覧者の登録、更新日時取得
-	public ArrayList<UserBean> userDate(String name){
+	//閲覧者の登録、更新日時、ひとこと取得
+	public ArrayList<UserBean> userData(String name){
 		ArrayList<UserBean> userList = new ArrayList<UserBean>();
 		try {
 			conn = getConnection();
-			ps = conn.prepareStatement("SELECT create_date, create_time, update_date, update_time FROM user WHERE user_name = ?");
+			ps = conn.prepareStatement("SELECT create_date, create_time, update_date, update_time, greet FROM user WHERE user_name = ?");
 			ps.setString(1, name);
 			rs = ps.executeQuery();
 			
@@ -91,6 +91,7 @@ public class UserDAO extends DAOConnection{
 				bean.setCreateTime(rs.getTime("create_time"));
 				bean.setUpdateDate(rs.getDate("update_date"));
 				bean.setUpdateTime(rs.getTime("update_time"));
+				bean.setGreet(rs.getString("greet"));
 				userList.add(bean);
 			}
 		}catch(SQLException e) {
@@ -126,14 +127,30 @@ public class UserDAO extends DAOConnection{
 		return id;
 	}
 	
-	//情報更新
-	public void userUpdate(String name, String password, int id) {		
+	//ひとこと更新
+	public void userGreet(String greet, String name) {		
 		try {
 			conn = getConnection();
-			ps = conn.prepareStatement("UPDATE user SET user_name = ?, password = ?, update_date = now(), update_time = now() WHERE user_id = ?");
+			ps = conn.prepareStatement("UPDATE user SET greet = ?, update_date = now(), update_time = now() WHERE user_name = ?");
+			ps.setString(1, greet);
+			ps.setString(2, name);
+			ps.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			allClose(ps, conn);
+		}
+	}
+	
+	//情報更新
+	public void userUpdate(String name, String password, String greet, int id) {		
+		try {
+			conn = getConnection();
+			ps = conn.prepareStatement("UPDATE user SET user_name = ?, password = ?, greet = ?, update_date = now(), update_time = now() WHERE user_id = ?");
 			ps.setString(1, name);
 			ps.setString(2, password);
-			ps.setInt(3, id);
+			ps.setString(3, greet);
+			ps.setInt(4, id);
 			ps.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -172,6 +189,7 @@ public class UserDAO extends DAOConnection{
 				bean.setCreateTime(rs.getTime("create_time"));
 				bean.setUpdateDate(rs.getDate("update_date"));
 				bean.setUpdateTime(rs.getTime("update_time"));
+				bean.setGreet(rs.getString("greet"));
 				userList.add(bean);
 			}
 		}catch(SQLException e) {

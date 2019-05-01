@@ -54,6 +54,12 @@
 							</div>
 							<div class="row">
 								<div class="col-md-3 col-xs-1"></div>
+								<div class="col-md-3 col-xs-12 font-weight-bold text-left border-bottom border-dark">ひとこと</div>
+								<div class="col-md-3 col-xs-12 text-right border-bottom border-dark">${list.greet}</div>
+								<div class="col-md-3 col-xs-1"></div>
+							</div>
+							<div class="row">
+								<div class="col-md-3 col-xs-1"></div>
 								<c:if test="${list.id != 1}">
 									<div class="col-md-6 col-xs-10">
 										<a href="UserBAN?id=${list.id}"><input class="btn btn-danger shadow" type="button" value="この会員を退会させる"></a>
