@@ -65,20 +65,20 @@
 							<br>
 							<form action="UserDetail?loginOk&name=${name}&greetChange" method="POST">
 								<div class="row">
-									<div class="col-md-3 col-xs-1"></div>
-									<div class="col-md-1 col-xs-5 font-weight-bold text-left border-bottom border-dark">ひとこと</div>
+									<div class="col-lg-3 col-xs-1"></div>
+									<div class="col-lg-1 col-xs-5 font-weight-bold text-left border-bottom border-dark">ひとこと</div>
 									<c:if test="${composerName == null}">
-										<div class="col-md-1 col-xs-5 border-bottom border-dark">
-											<input class="btn btn-success shadow" type="submit" value="書き込む">
+										<div class="col-lg-1 col-xs-5 border-bottom border-dark greetBtn">
+											<input class="btn btn-success btn-sm shadow" type="submit" value="書き込む">
 										</div>
-										<div class="col-md-4 col-xs-12 text-right border-bottom border-dark">
+										<div class="col-lg-4 col-xs-12 text-right border-bottom border-dark">
 											<input class="text-right" type="text" name="greet" size="35" value="${user.greet}" placeholder="ご自由にひとことどうぞ">
 										</div>
 									</c:if>
 									<c:if test="${composerName != null}">
-										<div class="col-md-5 col-xs-12 text-right border-bottom border-dark">${user.greet}</div>
+										<div class="col-lg-5 col-xs-12 text-right border-bottom border-dark">${user.greet}</div>
 									</c:if>
-									<div class="col-md-3 col-xs-1"></div>
+									<div class="col-lg-3 col-xs-1"></div>
 								</div>
 							</form>
 							<br>
@@ -375,7 +375,7 @@
 				</details>
 			</c:if>
 			<c:if test="${myData != null}">
-				<h3 class="space">情報の更新</h3>
+				<h3 class="mt-5">情報の更新</h3>
 				<c:if test="${loginOk == null}">
 					<p>情報変更</p>
 					<form action="UserDetail" method="POST">
@@ -401,7 +401,6 @@
 							</div>
 							<div class="col-1"></div>
 						</div>
-						<%-- <jsp:include page="../include/loginForm.jsp" flush="true" /> --%>
 						<p class="my-4"><input class="btn btn-success btn-lg shadow" type="submit" value="認証"></p>
 					</form>	
 				</c:if>
@@ -416,7 +415,7 @@
 			<p class="my-4"><a href="Top"><input class="btn btn-info shadow" type="button" value="戻る"></a></p>
 			<c:if test="${myData != null}">
 				<c:if test="${name != 'admin'}">
-					<p class="space"><a href="UserDelete"><input class="btn btn-danger shadow" type="button" value="退会"></a></p>
+					<p class="mt-5"><a href="UserDelete"><input class="btn btn-danger shadow" type="button" value="退会"></a></p>
 				</c:if>
 			</c:if>
 		</div>

@@ -48,7 +48,6 @@
 					<c:if test="${listNum.count % 2 == 0}">
 						<div class="col-lg-4 col-xs-12 bg-light shadow list zoom">
 							<div class="row lists">
-								<div class="col-1"></div>
 								<div class="col-1">
 									<c:if test="${name == 'admin'}">
 										<a href="HaikuDelete?id=${list.id}&genre=${genre}">
@@ -57,14 +56,14 @@
 									</c:if>
 								</div>
 								<div class="col-1 text-left py-3">${list.strComposeDate} ${list.strComposeTime}</div>
-								<div class="col-4">
+								<div class="col-5">
 									<p class="text-left py-3 font-weight-bold">${list.haiku}</p>
 									<p class="text-right">
 										<object><a class="linkName" href="UserDetail?name=${list.composer}">${list.composer}</a></object>
 									</p>
 								</div>
-								<div class="col-3">${list.comment}</div>
-								<div class="col-1">
+								<div class="col-2">${list.comment}</div>
+								<div class="col-2">
 									<c:if test="${name != list.composer}">
 										<p class="text-right">
 											${list.good}人から<a class="linkGood" href="Good?id=${list.id}&genre=${genre}">高評価</a>されました
@@ -81,7 +80,6 @@
 					<c:if test="${listNum.count % 2 != 0}">
 						<div class="col-lg-4 col-xs-12 bg-danger shadow list zoom">
 							<div class="row lists">
-								<div class="col-1"></div>
 								<div class="col-1">
 									<c:if test="${name == 'admin'}">
 										<a href="HaikuDelete?id=${list.id}&genre=${genre}">
@@ -90,14 +88,14 @@
 									</c:if>
 								</div>
 								<div class="col-1 text-left py-3 whiteWord">${list.strComposeDate} ${list.strComposeTime}</div>
-								<div class="col-4">
+								<div class="col-5">
 									<p class="text-left py-3 font-weight-bold whiteWord">${list.haiku}</p>
 									<p class="text-right">
 										<object><a class="linkName" href="UserDetail?name=${list.composer}">${list.composer}</a></object>
 									</p>
 								</div>
-								<div class="col-3 whiteWord">${list.comment}</div>
-								<div class="col-1">
+								<div class="col-2 whiteWord">${list.comment}</div>
+								<div class="col-2">
 									<c:if test="${name != list.composer}">
 										<p class="text-right whiteWord">
 											${list.good}人から<a class="linkGood" href="Good?id=${list.id}&genre=${genre}">高評価</a>されました
@@ -114,7 +112,7 @@
 				</c:forEach>
 			</div>
 			<div class="bg-secondary py-2"><h2></h2></div>
-			<p class="space"><a href="Top"><input class="btn btn-info shadow" type="button" value="戻る"></a></p>
+			<p class="mt-5"><a href="Top"><input class="btn btn-info shadow" type="button" value="戻る"></a></p>
 		</div>
 		<jsp:include page="../include/footer.jsp" flush="true" />
 	</div>

@@ -12,7 +12,7 @@
 	<div id="loaded" class="container">
 		<jsp:include page="../include/header.jsp" flush="true" />
 		<div class="main">
-			<h1 class="space">退会の確認</h1>
+			<h1 class="mt-5">退会の確認</h1>
 			<jsp:include page="../include/msg.jsp" flush="true" />
 			<h2 class="py-3">本当に<span class="delete">退会</span>されますか？</h2>
 			<form action="UserDelete" method="POST">

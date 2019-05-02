@@ -141,7 +141,6 @@ public class UserDetail extends HttpServlet {
 				String name = request.getParameter("name");
 				String password1 = request.getParameter("password1");
 				String password2 = request.getParameter("password2");
-				String greet = request.getParameter("greet");
 				String strId = request.getParameter("id");
 				int id = Integer.parseInt(strId);
 				
@@ -164,7 +163,7 @@ public class UserDetail extends HttpServlet {
 							//合言葉を暗号化
 							String safetyPassword = PasswordUtil.getSafetyPassword(password, name);
 							UserDAO dao = new UserDAO();
-							dao.userUpdate(name, safetyPassword, greet, id);
+							dao.userUpdate(name, safetyPassword, id);
 								
 							request.setAttribute("msg", "情報を変更しました。");
 							session.setAttribute("name", name);

@@ -94,10 +94,6 @@ public class List extends HttpServlet {
 					request.setAttribute("order", "新しい順");
 				}else if(order.equals("old")) {
 					request.setAttribute("order", "古い順");
-				}else if(order.equals("good")) {
-					request.setAttribute("order", "高評価順");
-				}else {
-					request.setAttribute("order", "低評価順");
 				}
 			//検索の場合
 			}else {

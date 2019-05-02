@@ -4,10 +4,14 @@
 .title{
 	background: url(../../img/title.jpg) center no-repeat;
 	background-size: cover;
+	height: 20vh;
 }
 .titleWord:hover{
 	color: black;
 	text-decoration: none;
+}
+.titleArea{
+	margin-top: -4vh;
 }
 /*ここまでサイト名表示関連*/
 
@@ -103,6 +107,6 @@ summary{
 .deleteHaiku{
 	writing-mode: initial;
 	transform: rotate(90deg);
-	margin-right: -30%;
+	margin-right: -18%;
 	margin-top: 30%;
 }

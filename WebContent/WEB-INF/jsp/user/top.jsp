@@ -89,17 +89,17 @@
 					<div class="row tops">
 						<div class="col-md-6 col-xs-12 order-md-2 bg-warning shadow list zoom">
 							<a class="linkMenuChoka blackHover" href="List?genre=3">
-								<div class="col-2 h3 font-weight-normal">長歌</div>
+								<div class="col-1 h3 font-weight-normal">長歌</div>
 								<c:forEach items="${newChoka}" var="choka">
 									<div class="col-1 text-left py-3">${choka.strComposeDate} ${choka.strComposeTime}</div>
-									<div class="col-3 text-left py-3 font-weight-bold">
+									<div class="col-4 text-left py-3 font-weight-bold">
 										${choka.haiku}
-										<div class="col-1 text-right mb-4">
+										<div class="text-right mb-4">
 											<object><a class="linkName" href="UserDetail?name=${choka.composer}">${choka.composer}</a></object>
 										</div>
 									</div>
-									<div class="col-3">${choka.comment}</div>
-									<div class="col-1">
+									<div class="col-2">${choka.comment}</div>
+									<div class="col-3">
 										<c:if test="${name != choka.composer}">
 											<p class="text-right">
 												<object>
@@ -111,7 +111,7 @@
 											<p class="text-right">${choka.good}人から高評価されました</p>
 										</c:if>
 									</div>
-									<div class="col-2"></div>
+									<div class="col-1"></div>
 								</c:forEach>
 							</a>
 						</div>
@@ -317,7 +317,7 @@
 				</div>
 				<div class="col-md-2 col-xs-1"></div>
 			</div>
-			<p class="my-3"><a href="UserDetail?name=${name}"><input class="btn btn-primary shadow" type="button" value="あなたの詳細"></a></p>
+			<p class="my-5"><a href="UserDetail?name=${name}"><input class="btn btn-primary shadow" type="button" value="あなたの詳細"></a></p>
 			<c:if test="${name == 'admin'}">
 				<p class="py-5"><a href="UserList"><input class="btn btn-danger shadow" type="button" value="会員一覧"></a></p>
 			</c:if>

@@ -9,8 +9,10 @@
 <body>
 	<a class="titleWord" href="Top">
 		<div class="jumbotron title">
-			<div class="display-4 text-dark">歌の会</div>
-			<p class="h3 mt-3 text-dark">皆が織り成す　歌香り立つ</p>
+			<div class="titleArea">
+				<div class="h1 text-dark">歌の会</div>
+				<p class="h4 mt-3 text-dark">皆が織り成す　歌香り立つ</p>
+			</div>
 		</div>		
 	</a>
 </body>

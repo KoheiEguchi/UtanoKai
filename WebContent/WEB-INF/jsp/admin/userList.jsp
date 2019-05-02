@@ -20,8 +20,21 @@
 			<form action="UserList" method="POST">
 				<jsp:include page="../include/searchForm.jsp" flush="true" />
 			</form>
+			<form action="UserList?userOrder" method="POST">
+				<div class="row py-4">
+					<div class="col-md-5 col-xs-1"></div>
+					<div class="col-md-2 col-xs-10">
+						<select class="form-control" name="order">
+							<option value="old">古い順</option>
+							<option value="new">新しい順</option>
+						</select>
+						<p><input class="btn btn-primary shadow mt-2" type="submit" value="並び替え"></p>
+					</div>
+					<div class="col-md-5 col-xs-1"></div>
+				</div>
+			</form>
 			<div class="bg-secondary py-1">
-				<h4 class="font-weight-normal whiteWord">会員の一覧</h4>
+				<h4 class="font-weight-normal whiteWord">会員の一覧(${order})</h4>
 			</div>
 			<c:forEach items="${userList}" var="list">
 				<div class="my-4">
@@ -54,8 +67,8 @@
 							</div>
 							<div class="row">
 								<div class="col-md-3 col-xs-1"></div>
-								<div class="col-md-3 col-xs-12 font-weight-bold text-left border-bottom border-dark">ひとこと</div>
-								<div class="col-md-3 col-xs-12 text-right border-bottom border-dark">${list.greet}</div>
+								<div class="col-md-1 col-xs-12 font-weight-bold text-left border-bottom border-dark">ひとこと</div>
+								<div class="col-md-5 col-xs-12 text-right border-bottom border-dark">${list.greet}</div>
 								<div class="col-md-3 col-xs-1"></div>
 							</div>
 							<div class="row">
@@ -73,7 +86,7 @@
 					</div>
 				</div>
 			</c:forEach>
-			<p class="space"><a href="Top"><input class="btn btn-info shadow" type="button" value="戻る"></a></p>
+			<p class="mt-5"><a href="Top"><input class="btn btn-info shadow" type="button" value="戻る"></a></p>
 		</div>
 		<jsp:include page="../include/footer.jsp" flush="true" />
 	</div>

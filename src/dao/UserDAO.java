@@ -3,7 +3,9 @@ package dao;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import beans.HaikuBean;
 import beans.UserBean;
+import haiku.Common;
 
 public class UserDAO extends DAOConnection{
 	//認証確認
@@ -143,13 +145,12 @@ public class UserDAO extends DAOConnection{
 	}
 	
 	//情報更新
-	public void userUpdate(String name, String password, String greet, int id) {		
+	public void userUpdate(String name, String password, int id) {		
 		try {
 			conn = getConnection();
-			ps = conn.prepareStatement("UPDATE user SET user_name = ?, password = ?, greet = ?, update_date = now(), update_time = now() WHERE user_id = ?");
+			ps = conn.prepareStatement("UPDATE user SET user_name = ?, password = ?, update_date = now(), update_time = now() WHERE user_id = ?");
 			ps.setString(1, name);
 			ps.setString(2, password);
-			ps.setString(3, greet);
 			ps.setInt(4, id);
 			ps.executeUpdate();
 		}catch(SQLException e) {
@@ -224,6 +225,41 @@ public class UserDAO extends DAOConnection{
 			allClose(ps, conn);
 		}
 		return searchUser;
+	}
+	
+	//指定された並びの会員一覧を取得
+	public ArrayList<UserBean> orderUser(String order){
+		ArrayList<UserBean> userList = new ArrayList<UserBean>();
+		try {
+			conn = getConnection();
+			String sql = "SELECT * FROM user ORDER BY ";
+			//新しい順の場合
+			if(order.equals("new")) {
+				sql = sql + "create_date DESC, create_time DESC";
+			//古い順の場合
+			}else if(order.equals("old")) {
+				sql = sql + "create_date ASC, create_time ASC";
+			}
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				UserBean bean = new UserBean();
+				bean.setId(rs.getInt("user_id"));
+				bean.setName(rs.getString("user_name"));
+				bean.setCreateDate(rs.getDate("create_date"));
+				bean.setCreateTime(rs.getTime("create_time"));
+				bean.setUpdateDate(rs.getDate("update_date"));
+				bean.setUpdateTime(rs.getTime("update_time"));
+				bean.setGreet(rs.getString("greet"));
+				userList.add(bean);
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			allClose(ps, conn);
+		}
+		return userList;
 	}
 	
 	//退会させる会員を取得
