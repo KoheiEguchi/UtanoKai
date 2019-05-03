@@ -164,7 +164,7 @@ public class HaikuDAO extends DAOConnection{
 		return haikuList;
 	}
 	
-	//新たに句を詠む
+	//新たに歌を詠む
 	public void compose(String name, String haiku, String comment, int genre) {
 		try {
 			conn = getConnection();

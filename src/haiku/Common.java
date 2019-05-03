@@ -49,7 +49,11 @@ public class Common {
 	//歌を詠んだ日付を漢数字化
 	public static String composeDateChange(ResultSet rs) throws SQLException {
 		Date composeDate = rs.getDate("compose_date");
-		String date = new SimpleDateFormat("yyyy年M月d日").format(composeDate);
+		String baseDate = new SimpleDateFormat("yyyy年M月d日").format(composeDate);
+		
+		//西暦を年号表記に変更
+		String date = nengouChange(baseDate);
+		
 		for(int i = 0; i < date.length(); i++) {
 			String num = date.substring(i, i + 1);
 			switch(num) {
@@ -88,6 +92,62 @@ public class Common {
 			}
 		}
 		return date;
+	}
+	//西暦を年号表記に変更
+	private static String nengouChange(String date) {
+		String changedDate = "";
+		
+		int toshi = date.indexOf("年");
+		int tsuki = date.indexOf("月");
+		int hi = date.indexOf("日");
+		
+		String strYear = date.substring(0, toshi);
+		int year = Integer.parseInt(strYear);
+		String strMonth = date.substring(toshi + 1, tsuki);
+		int month = Integer.parseInt(strMonth);
+		String strDay = date.substring(tsuki + 1, hi);
+		int day = Integer.parseInt(strDay);
+		
+		//令和の場合
+		if((year >= 2020) || (year == 2019 && month >= 5)) {
+			if(year - 2018 == 1) {
+				changedDate = "令和" + "元年" + strMonth + "月"+ strDay + "日";
+			}else {
+				changedDate = "令和" + (year - 2018) + "年" + strMonth + "月"+ strDay + "日";
+			}
+		//平成の場合
+		}else if((year >= 1990) || (year == 1989 && month >= 2) || (year == 1989 && month == 1 && day >= 7)) {
+			if(year - 1988 == 1) {
+				changedDate = "平成" + "元年" + strMonth + "月" + strDay + "日";
+			}else {
+				changedDate = "平成" + (year - 1988) + "年" + strMonth + "月"+ strDay + "日";
+			}
+		//昭和の場合
+		}else if((year >= 1927) || (year == 1926 && month == 12 && day >= 25)) {
+			if(year - 1925 == 1) {
+				changedDate = "昭和" + "元年" + strMonth + "月" + strDay + "日";
+			}else {
+				changedDate = "昭和" + (year - 1925) + "年" + strMonth + "月"+ strDay + "日";
+			}
+		//大正の場合
+		}else if((year >= 1913) || (year == 1912 && month >= 8) || year == 1912 && month == 7 && day >= 30) {
+			if(year - 1911 == 1) {
+				changedDate = "大正" + "元年" + strMonth + "月" + strDay + "日";
+			}else {
+				changedDate = "大正" + (year - 1911) + "年" + strMonth + "月"+ strDay + "日";
+			}
+		//明治の場合
+		}else if((year >= 1869) || (year == 1868 && month >= 2) || (year == 1868 && month == 1 && day >= 25)) {
+			if(year - 1867 == 1) {
+				changedDate = "明治" + "元年" + strMonth + "月" + strDay + "日";
+			}else {
+				changedDate = "明治" + (year - 1867) + "年" + strMonth + "月"+ strDay + "日";
+			}
+		//慶應以前の場合
+		}else {
+			changedDate = strYear + "年" + strMonth + "月" + strDay + "日";
+		}
+		return changedDate;
 	}
 	//歌を詠んだ時刻を漢数字化
 	public static String composeTimeChange(ResultSet rs) throws SQLException{
