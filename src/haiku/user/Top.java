@@ -85,6 +85,9 @@ public class Top extends HttpServlet {
 				}
 			}
 			
+			//トップ画面のみヘッダー表示を変える
+			request.setAttribute("top", "top");
+			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user/top.jsp");
 			dispatcher.forward(request,response);
 		}

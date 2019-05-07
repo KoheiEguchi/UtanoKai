@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
 /*ここから新着歌の表示関連*/
+.haikusGenre{
+	margin-left: -15px;
+	margin-right: -15px;
+}
 .linkMenuTanka, .linkMenuChoka{
 	text-decoration: none;
 	display: block;

@@ -22,12 +22,10 @@
 			<jsp:include page="../include/msg.jsp" flush="true" />
 			
 			<!-- ここから最新の歌一覧 -->
-			<div class="bg-secondary py-2">
-				<h3 class="whiteWord">最新の歌</h3>
-			</div>
 			<div class="row">
-				<div class="col-1 bg-secondary"></div>
+				<div class="col-1"></div>
 				<div class="col-10">
+					<div id="newHaikus" class="bg-secondary py-2 haikusGenre"><h3 class="whiteWord">最新の歌</h3></div>
 					<div class="row tops">
 						<div class="col-md-6 col-xs-12 order-md-2 bg-success shadow list zoom">
 							<a class="linkMenuHaiku whiteHover" href="List?genre=1">
@@ -144,16 +142,12 @@
 							</a>
 						</div>
 					</div>
-				</div>
-				<div class="col-1 bg-secondary"></div>
-			</div>
-			<!-- ここまで最新の歌一覧 -->
-			
-			<!-- ここから高評価の歌一覧 -->
-			<div class="bg-secondary py-2"><h3 class="whiteWord">評価の高い歌</h3></div>
-			<div class="row tops">
-				<div class="col-1 order-3 bg-success py-1 list"><h3 class="whiteWord">俳句・川柳</h3></div>
-				<div class="col-10 order-2">
+					<div class="bg-secondary py-3 haikusGenre"></div>
+					<!-- ここまで最新の歌一覧 -->
+					<div class="py-5"></div>
+					<!-- ここから高評価の歌一覧 -->
+					<div id="goodHaikus" class="bg-secondary py-2 haikusGenre"><h3 class="whiteWord">評価の高い歌</h3></div>
+					<div class="bg-success py-2 haikusGenre"><h3 class="whiteWord">俳句・川柳</h3></div>
 					<div class="row">
 						<c:forEach items="${goodHaiku}" var="haiku">
 							<div class="col-md-4 col-xs-12 py-4 goodHaiku shadow list zoom">
@@ -184,12 +178,8 @@
 							</div>
 						</c:forEach>
 					</div>
-				</div>
-				<div class="col-1 order-1 bg-success"></div>
-			</div>
-			<div class="row tops">
-				<div class="col-1 order-3 bg-info py-1 list"><h3>短歌</h3></div>
-				<div class="col-10 order-2">
+					<div class="bg-success py-3 haikusGenre"></div>
+					<div class="bg-info py-2 haikusGenre"><h3>短歌</h3></div>
 					<div class="row">
 						<c:forEach items="${goodTanka}" var="tanka">
 							<div class="col-md-4 col-xs-12 py-4 goodTanka shadow list zoom">
@@ -220,12 +210,8 @@
 							</div>
 						</c:forEach>
 					</div>
-				</div>
-				<div class="col-1 order-1 bg-info"></div>
-			</div>
-			<div class="row tops">
-				<div class="col-1 order-3 bg-warning py-1 list"><h3>長歌</h3></div>
-				<div class="col-10 order-2">
+					<div class="bg-info py-3 haikusGenre"></div>
+					<div class="bg-warning py-2 haikusGenre"><h3>長歌</h3></div>
 					<div class="row">
 						<c:forEach items="${goodChoka}" var="choka">
 							<div class="col-md-4 col-xs-12 py-4 goodChoka shadow list zoom">
@@ -256,12 +242,8 @@
 							</div>
 						</c:forEach>
 					</div>
-				</div>
-				<div class="col-1 order-1 bg-warning"></div>
-			</div>
-			<div class="row tops">
-				<div class="col-1 order-3 bg-danger py-1 list"><h3 class="whiteWord">都々逸</h3></div>
-				<div class="col-10 order-2">
+					<div class="bg-warning py-3 haikusGenre"></div>
+					<div class="bg-danger py-2 haikusGenre"><h3 class="whiteWord">都々逸</h3></div>
 					<div class="row">
 						<c:forEach items="${goodDodoitsu}" var="dodoitsu">
 							<div class="col-md-4 col-xs-12 py-4 goodDodoitsu shadow list zoom">
@@ -292,14 +274,14 @@
 							</div>
 						</c:forEach>
 					</div>
+					<div class="bg-danger py-3 haikusGenre"></div>
 				</div>
-				<div class="col-1 order-1 bg-danger"></div>
+				<div class="col-1"></div>
 			</div>
-			<div class="bg-secondary py-2"><h2></h2></div>
 			<!-- ここまで高評価の歌一覧 -->
 			
 			<p class="my-5"><a href="Compose"><input class="btn btn-success btn-lg shadow" type="button" value="新たに詠む"></a></p>
-			<div class="row">
+			<div id="description" class="row">
 				<div class="col-md-2 col-xs-1"></div>
 				<div class="col-md-8 col-xs-10">
 					<ul class="nav nav-tabs">
