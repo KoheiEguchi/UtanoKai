@@ -88,289 +88,295 @@
 				</c:forEach>
 				<details open>
 					<summary>これまで詠まれた歌</summary>
-					<div class="bg-secondary py-1"><h3 class="whiteWord">俳句・川柳</h3></div>
 					<div class="row">
-						<c:forEach items="${haikuList}" var="haiku" varStatus="listNum">
-							<c:if test="${listNum.count % 2 == 0}">
-								<div class="col-md-4 col-xs-12 bg-light shadow list zoom">
-									<div class="row lists">
-										<div class="col-1"></div>
-										<div class="col-1">
-											<c:if test="${name == 'admin'}">
-												<a href="HaikuDelete?id=${list.id}&genre=1">
-													<input class="btn btn-warning shadow deleteHaiku" type="button" value="この歌を削除する">
-												</a>
-											</c:if>
+						<div class="col-1"></div>
+						<div class="col-10">
+							<div class="bg-secondary py-1 haikusGenre"><h3 class="whiteWord">俳句・川柳</h3></div>
+							<div class="row">
+								<c:forEach items="${haikuList}" var="haiku" varStatus="listNum">
+									<c:if test="${listNum.count % 2 == 0}">
+										<div class="col-md-4 col-xs-12 bg-light shadow list zoom">
+											<div class="row lists">
+												<div class="col-1"></div>
+												<div class="col-1">
+													<c:if test="${name == 'admin'}">
+														<a href="HaikuDelete?id=${haiku.id}&genre=1">
+															<input class="btn btn-warning shadow deleteHaiku" type="button" value="この歌を削除する">
+														</a>
+													</c:if>
+												</div>
+												<div class="col-1 text-left py-3">${haiku.strComposeDate} ${haiku.strComposeTime}</div>
+												<div class="col-4">
+													<p class="text-left py-3 font-weight-bold">${haiku.haiku}</p>
+													<p class="text-right">${haiku.composer}</p>
+												</div>
+												<div class="col-2">${haiku.comment}</div>
+												<div class="col-1">
+													<c:if test="${name != haiku.composer}">
+														<p class="text-right">
+															<object>
+																${haiku.good}人から<a class="linkGood" href="Good?id=${haiku.id}&genre=1">高評価</a>されました
+															</object>
+														</p>
+													</c:if>
+													<c:if test="${name == haiku.composer}">
+														<p class="text-right">${haiku.good}人から高評価されました</p>
+													</c:if>
+												</div>
+												<div class="col-2"></div>
+											</div>
 										</div>
-										<div class="col-1 text-left py-3">${haiku.strComposeDate} ${haiku.strComposeTime}</div>
-										<div class="col-4">
-											<p class="text-left py-3 font-weight-bold">${haiku.haiku}</p>
-											<p class="text-right">${haiku.composer}</p>
+									</c:if>
+									<c:if test="${listNum.count % 2 != 0}">
+										<div class="col-md-4 col-xs-12 bg-success shadow list zoom">
+											<div class="row lists">
+												<div class="col-1"></div>
+												<div class="col-1">
+													<c:if test="${name == 'admin'}">
+														<a href="HaikuDelete?id=${haiku.id}&genre=1">
+															<input class="btn btn-warning shadow deleteHaiku" type="button" value="この歌を削除する">
+														</a>
+													</c:if>
+												</div>
+												<div class="col-1 text-left py-3 whiteWord">${haiku.strComposeDate} ${haiku.strComposeTime}</div>
+												<div class="col-4">
+													<p class="text-left py-3 font-weight-bold whiteWord">${haiku.haiku}</p>
+													<p class="text-right whiteWord">${haiku.composer}</p>
+												</div>
+												<div class="col-2 whiteWord">${haiku.comment}</div>
+												<div class="col-1">
+													<c:if test="${name != haiku.composer}">
+														<p class="text-right whiteWord">
+															<object>
+																${haiku.good}人から<a class="linkGood" href="Good?id=${haiku.id}&genre=1">高評価</a>されました
+															</object>
+														</p>
+													</c:if>
+													<c:if test="${name == haiku.composer}">
+														<p class="text-right whiteWord">${haiku.good}人から高評価されました</p>
+													</c:if>
+												</div>
+												<div class="col-2"></div>
+											</div>
 										</div>
-										<div class="col-2">${haiku.comment}</div>
-										<div class="col-1">
-											<c:if test="${name != haiku.composer}">
-												<p class="text-right">
-													<object>
-														${haiku.good}人から<a class="linkGood" href="Good?id=${haiku.id}&genre=1">高評価</a>されました
-													</object>
-												</p>
-											</c:if>
-											<c:if test="${name == haiku.composer}">
-												<p class="text-right">${haiku.good}人から高評価されました</p>
-											</c:if>
+									</c:if>
+								</c:forEach>
+							</div>
+							<div class="bg-secondary py-1 haikusGenre"><h3 class="whiteWord">短歌</h3></div>
+							<div class="row">
+								<c:forEach items="${tankaList}" var="tanka" varStatus="listNum">
+									<c:if test="${listNum.count % 2 == 0}">
+										<div class="col-md-4 col-xs-12 bg-light shadow list zoom">
+											<div class="row lists">
+												<div class="col-1"></div>
+												<div class="col-1">
+													<c:if test="${name == 'admin'}">
+														<a href="HaikuDelete?id=${tanka.id}&genre=2">
+															<input class="btn btn-warning shadow deleteHaiku" type="button" value="この歌を削除する">
+														</a>
+													</c:if>
+												</div>
+												<div class="col-1 text-left py-3">${tanka.strComposeDate} ${tanka.strComposeTime}</div>
+												<div class="col-4">
+													<p class="text-left py-3 font-weight-bold">${tanka.haiku}</p>
+													<p class="text-right">${tanka.composer}</p>
+												</div>
+												<div class="col-2">${tanka.comment}</div>
+												<div class="col-1">
+													<c:if test="${name != tanka.composer}">
+														<p class="text-right">
+															<object>
+																${tanka.good}人から<a class="linkGood" href="Good?id=${tanka.id}&genre=2">高評価</a>されました
+															</object>
+														</p>
+													</c:if>
+													<c:if test="${name == tanka.composer}">
+														<p class="text-right">${tanka.good}人から高評価されました</p>
+													</c:if>
+												</div>
+												<div class="col-2"></div>
+											</div>
 										</div>
-										<div class="col-2"></div>
-									</div>
-								</div>
-							</c:if>
-							<c:if test="${listNum.count % 2 != 0}">
-								<div class="col-md-4 col-xs-12 bg-success shadow list zoom">
-									<div class="row lists">
-										<div class="col-1"></div>
-										<div class="col-1">
-											<c:if test="${name == 'admin'}">
-												<a href="HaikuDelete?id=${list.id}&genre=1">
-													<input class="btn btn-warning shadow deleteHaiku" type="button" value="この歌を削除する">
-												</a>
-											</c:if>
+									</c:if>
+									<c:if test="${listNum.count % 2 != 0}">
+										<div class="col-md-4 col-xs-12 bg-info shadow list zoom">
+											<div class="row lists">
+												<div class="col-1"></div>
+												<div class="col-1">
+													<c:if test="${name == 'admin'}">
+														<a href="HaikuDelete?id=${tanka.id}&genre=2">
+															<input class="btn btn-warning shadow deleteHaiku" type="button" value="この歌を削除する">
+														</a>
+													</c:if>
+												</div>
+												<div class="col-1 text-left py-3">${tanka.strComposeDate} ${tanka.strComposeTime}</div>
+												<div class="col-4">
+													<p class="text-left py-3 font-weight-bold">${tanka.haiku}</p>
+													<p class="text-right">${tanka.composer}</p>
+												</div>
+												<div class="col-2">${tanka.comment}</div>
+												<div class="col-1">
+													<c:if test="${name != tanka.composer}">
+														<p class="text-right">
+															<object>
+																${tanka.good}人から<a class="linkGood" href="Good?id=${tanka.id}&genre=2">高評価</a>されました
+															</object>
+														</p>
+													</c:if>
+													<c:if test="${name == tanka.composer}">
+														<p class="text-right">${tanka.good}人から高評価されました</p>
+													</c:if>
+												</div>
+												<div class="col-2"></div>
+											</div>
 										</div>
-										<div class="col-1 text-left py-3 whiteWord">${haiku.strComposeDate} ${haiku.strComposeTime}</div>
-										<div class="col-4">
-											<p class="text-left py-3 font-weight-bold whiteWord">${haiku.haiku}</p>
-											<p class="text-right whiteWord">${haiku.composer}</p>
+									</c:if>
+								</c:forEach>
+							</div>
+							<div class="bg-secondary py-1 haikusGenre"><h3 class="whiteWord">長歌</h3></div>
+							<div class="row">
+								<c:forEach items="${chokaList}" var="choka" varStatus="listNum">
+									<c:if test="${listNum.count % 2 == 0}">
+										<div class="col-md-4 col-xs-12 bg-light shadow list zoom">
+											<div class="row lists">
+												<div class="col-1"></div>
+												<div class="col-1">
+													<c:if test="${name == 'admin'}">
+														<a href="HaikuDelete?id=${choka.id}&genre=3">
+															<input class="btn btn-warning shadow deleteHaiku" type="button" value="この歌を削除する">
+														</a>
+													</c:if>
+												</div>
+												<div class="col-1 text-left py-3">${choka.strComposeDate} ${choka.strComposeTime}</div>
+												<div class="col-4">
+													<p class="text-left py-3 font-weight-bold">${choka.haiku}</p>
+													<p class="text-right">${choka.composer}</p>
+												</div>
+												<div class="col-2">${choka.comment}</div>
+												<div class="col-1">
+													<c:if test="${name != choka.composer}">
+														<p class="text-right">
+															<object>
+																${choka.good}人から<a class="linkGood" href="Good?id=${choka.id}&genre=3">高評価</a>されました
+															</object>
+														</p>
+													</c:if>
+													<c:if test="${name == choka.composer}">
+														<p class="text-right">${choka.good}人から高評価されました</p>
+													</c:if>
+												</div>
+												<div class="col-2"></div>
+											</div>
 										</div>
-										<div class="col-2 whiteWord">${haiku.comment}</div>
-										<div class="col-1">
-											<c:if test="${name != haiku.composer}">
-												<p class="text-right whiteWord">
-													<object>
-														${haiku.good}人から<a class="linkGood" href="Good?id=${haiku.id}&genre=1">高評価</a>されました
-													</object>
-												</p>
-											</c:if>
-											<c:if test="${name == haiku.composer}">
-												<p class="text-right whiteWord">${haiku.good}人から高評価されました</p>
-											</c:if>
+									</c:if>
+									<c:if test="${listNum.count % 2 != 0}">
+										<div class="col-md-4 col-xs-12 bg-warning shadow list zoom">
+											<div class="row lists">
+												<div class="col-1"></div>
+												<div class="col-1">
+													<c:if test="${name == 'admin'}">
+														<a href="HaikuDelete?id=${choka.id}&genre=3">
+															<input class="btn btn-warning shadow deleteHaiku" type="button" value="この歌を削除する">
+														</a>
+													</c:if>
+												</div>
+												<div class="col-1 text-left py-3">${choka.strComposeDate} ${choka.strComposeTime}</div>
+												<div class="col-4">
+													<p class="text-left py-3 font-weight-bold">${choka.haiku}</p>
+													<p class="text-right">${choka.composer}</p>
+												</div>
+												<div class="col-2">${choka.comment}</div>
+												<div class="col-1">
+													<c:if test="${name != choka.composer}">
+														<p class="text-right">
+															<object>
+																${choka.good}人から<a class="linkGood" href="Good?id=${choka.id}&genre=3">高評価</a>されました
+															</object>
+														</p>
+													</c:if>
+													<c:if test="${name == choka.composer}">
+														<p class="text-right">${choka.good}人から高評価されました</p>
+													</c:if>
+												</div>
+												<div class="col-2"></div>
+											</div>
 										</div>
-										<div class="col-2"></div>
-									</div>
-								</div>
-							</c:if>
-						</c:forEach>
+									</c:if>
+								</c:forEach>
+							</div>
+							<div class="bg-secondary py-1 haikusGenre"><h3 class="whiteWord">都々逸</h3></div>
+							<div class="row">
+								<c:forEach items="${dodoitsuList}" var="dodoitsu" varStatus="listNum">
+									<c:if test="${listNum.count % 2 == 0}">
+										<div class="col-md-4 col-xs-12 bg-light shadow list zoom">
+											<div class="row lists">
+												<div class="col-1"></div>
+												<div class="col-1">
+													<c:if test="${name == 'admin'}">
+														<a href="HaikuDelete?id=${dodoitsu.id}&genre=4">
+															<input class="btn btn-warning shadow deleteHaiku" type="button" value="この歌を削除する">
+														</a>
+													</c:if>
+												</div>
+												<div class="col-1 text-left py-3">${dodoitsu.strComposeDate} ${dodoitsu.strComposeTime}</div>
+												<div class="col-4">
+													<p class="text-left py-3 font-weight-bold">${dodoitsu.haiku}</p>
+													<p class="text-right">${dodoitsu.composer}</p>
+												</div>
+												<div class="col-2">${dodoitsu.comment}</div>
+												<div class="col-1">
+													<c:if test="${name != dodoitsu.composer}">
+														<p class="text-right">
+															<object>
+																${dodoitsu.good}人から<a class="linkGood" href="Good?id=${dodoitsu.id}&genre=4">高評価</a>されました
+															</object>
+														</p>
+													</c:if>
+													<c:if test="${name == dodoitsu.composer}">
+														<p class="text-right">${dodoitsu.good}人から高評価されました</p>
+													</c:if>
+												</div>
+												<div class="col-2"></div>
+											</div>
+										</div>
+									</c:if>
+									<c:if test="${listNum.count % 2 != 0}">
+										<div class="col-md-4 col-xs-12 bg-danger shadow list zoom">
+											<div class="col-1"></div>
+												<div class="col-1">
+													<c:if test="${name == 'admin'}">
+														<a href="HaikuDelete?id=${dodoitsu.id}&genre=4">
+															<input class="btn btn-warning shadow deleteHaiku" type="button" value="この歌を削除する">
+														</a>
+													</c:if>
+												</div>
+											<div class="col-1 text-left py-3 whiteWord">${dodoitsu.strComposeDate} ${dodoitsu.strComposeTime}</div>
+											<div class="col-4">
+												<p class="text-left py-3 font-weight-bold whiteWord">${dodoitsu.haiku}</p>
+												<p class="text-right whiteWord">${dodoitsu.composer}</p>
+											</div>
+											<div class="col-2 whiteWord">${dodoitsu.comment}</div>
+											<div class="col-1">
+													<c:if test="${name != dodoitsu.composer}">
+														<p class="text-right whiteWord">
+															<object>
+																${dodoitsu.good}人から<a class="linkGood" href="Good?id=${dodoitsu.id}&genre=4">高評価</a>されました
+															</object>
+														</p>
+													</c:if>
+													<c:if test="${name == dodoitsu.composer}">
+														<p class="text-right whiteWord">${dodoitsu.good}人から高評価されました</p>
+													</c:if>
+												</div>
+												<div class="col-2"></div>
+										</div>
+									</c:if>
+								</c:forEach>
+							</div>
+							<div class="bg-secondary py-2 haikusGenre"><h2></h2></div>
+						</div>
+						<div class="col-1"></div>
 					</div>
-					<div class="bg-secondary py-1"><h3 class="whiteWord">短歌</h3></div>
-					<div class="row">
-						<c:forEach items="${tankaList}" var="tanka" varStatus="listNum">
-							<c:if test="${listNum.count % 2 == 0}">
-								<div class="col-md-4 col-xs-12 bg-light shadow list zoom">
-									<div class="row lists">
-										<div class="col-1"></div>
-										<div class="col-1">
-											<c:if test="${name == 'admin'}">
-												<a href="HaikuDelete?id=${list.id}&genre=2">
-													<input class="btn btn-warning shadow deleteHaiku" type="button" value="この歌を削除する">
-												</a>
-											</c:if>
-										</div>
-										<div class="col-1 text-left py-3">${tanka.strComposeDate} ${tanka.strComposeTime}</div>
-										<div class="col-4">
-											<p class="text-left py-3 font-weight-bold">${tanka.haiku}</p>
-											<p class="text-right">${tanka.composer}</p>
-										</div>
-										<div class="col-2">${tanka.comment}</div>
-										<div class="col-1">
-											<c:if test="${name != tanka.composer}">
-												<p class="text-right">
-													<object>
-														${tanka.good}人から<a class="linkGood" href="Good?id=${tanka.id}&genre=2">高評価</a>されました
-													</object>
-												</p>
-											</c:if>
-											<c:if test="${name == tanka.composer}">
-												<p class="text-right">${tanka.good}人から高評価されました</p>
-											</c:if>
-										</div>
-										<div class="col-2"></div>
-									</div>
-								</div>
-							</c:if>
-							<c:if test="${listNum.count % 2 != 0}">
-								<div class="col-md-4 col-xs-12 bg-info shadow list zoom">
-									<div class="row lists">
-										<div class="col-1"></div>
-										<div class="col-1">
-											<c:if test="${name == 'admin'}">
-												<a href="HaikuDelete?id=${list.id}&genre=2">
-													<input class="btn btn-warning shadow deleteHaiku" type="button" value="この歌を削除する">
-												</a>
-											</c:if>
-										</div>
-										<div class="col-1 text-left py-3">${tanka.strComposeDate} ${tanka.strComposeTime}</div>
-										<div class="col-4">
-											<p class="text-left py-3 font-weight-bold">${tanka.haiku}</p>
-											<p class="text-right">${tanka.composer}</p>
-										</div>
-										<div class="col-2">${tanka.comment}</div>
-										<div class="col-1">
-											<c:if test="${name != tanka.composer}">
-												<p class="text-right">
-													<object>
-														${tanka.good}人から<a class="linkGood" href="Good?id=${tanka.id}&genre=2">高評価</a>されました
-													</object>
-												</p>
-											</c:if>
-											<c:if test="${name == tanka.composer}">
-												<p class="text-right">${tanka.good}人から高評価されました</p>
-											</c:if>
-										</div>
-										<div class="col-2"></div>
-									</div>
-								</div>
-							</c:if>
-						</c:forEach>
-					</div>
-					<div class="bg-secondary py-1"><h3 class="whiteWord">長歌</h3></div>
-					<div class="row">
-						<c:forEach items="${chokaList}" var="choka" varStatus="listNum">
-							<c:if test="${listNum.count % 2 == 0}">
-								<div class="col-md-4 col-xs-12 bg-light shadow list zoom">
-									<div class="row lists">
-										<div class="col-1"></div>
-										<div class="col-1">
-											<c:if test="${name == 'admin'}">
-												<a href="HaikuDelete?id=${list.id}&genre=3">
-													<input class="btn btn-warning shadow deleteHaiku" type="button" value="この歌を削除する">
-												</a>
-											</c:if>
-										</div>
-										<div class="col-1 text-left py-3">${choka.strComposeDate} ${choka.strComposeTime}</div>
-										<div class="col-4">
-											<p class="text-left py-3 font-weight-bold">${choka.haiku}</p>
-											<p class="text-right">${choka.composer}</p>
-										</div>
-										<div class="col-2">${choka.comment}</div>
-										<div class="col-1">
-											<c:if test="${name != choka.composer}">
-												<p class="text-right">
-													<object>
-														${choka.good}人から<a class="linkGood" href="Good?id=${choka.id}&genre=3">高評価</a>されました
-													</object>
-												</p>
-											</c:if>
-											<c:if test="${name == choka.composer}">
-												<p class="text-right">${choka.good}人から高評価されました</p>
-											</c:if>
-										</div>
-										<div class="col-2"></div>
-									</div>
-								</div>
-							</c:if>
-							<c:if test="${listNum.count % 2 != 0}">
-								<div class="col-md-4 col-xs-12 bg-warning shadow list zoom">
-									<div class="row lists">
-										<div class="col-1"></div>
-										<div class="col-1">
-											<c:if test="${name == 'admin'}">
-												<a href="HaikuDelete?id=${list.id}&genre=3">
-													<input class="btn btn-warning shadow deleteHaiku" type="button" value="この歌を削除する">
-												</a>
-											</c:if>
-										</div>
-										<div class="col-1 text-left py-3">${choka.strComposeDate} ${choka.strComposeTime}</div>
-										<div class="col-4">
-											<p class="text-left py-3 font-weight-bold">${choka.haiku}</p>
-											<p class="text-right">${choka.composer}</p>
-										</div>
-										<div class="col-2">${choka.comment}</div>
-										<div class="col-1">
-											<c:if test="${name != choka.composer}">
-												<p class="text-right">
-													<object>
-														${choka.good}人から<a class="linkGood" href="Good?id=${choka.id}&genre=3">高評価</a>されました
-													</object>
-												</p>
-											</c:if>
-											<c:if test="${name == choka.composer}">
-												<p class="text-right">${choka.good}人から高評価されました</p>
-											</c:if>
-										</div>
-										<div class="col-2"></div>
-									</div>
-								</div>
-							</c:if>
-						</c:forEach>
-					</div>
-					<div class="bg-secondary py-1"><h3 class="whiteWord">都々逸</h3></div>
-					<div class="row">
-						<c:forEach items="${dodoitsuList}" var="dodoitsu" varStatus="listNum">
-							<c:if test="${listNum.count % 2 == 0}">
-								<div class="col-md-4 col-xs-12 bg-light shadow list zoom">
-									<div class="row lists">
-										<div class="col-1"></div>
-										<div class="col-1">
-											<c:if test="${name == 'admin'}">
-												<a href="HaikuDelete?id=${list.id}&genre=4">
-													<input class="btn btn-warning shadow deleteHaiku" type="button" value="この歌を削除する">
-												</a>
-											</c:if>
-										</div>
-										<div class="col-1 text-left py-3">${dodoitsu.strComposeDate} ${dodoitsu.strComposeTime}</div>
-										<div class="col-4">
-											<p class="text-left py-3 font-weight-bold">${dodoitsu.haiku}</p>
-											<p class="text-right">${dodoitsu.composer}</p>
-										</div>
-										<div class="col-2">${dodoitsu.comment}</div>
-										<div class="col-1">
-											<c:if test="${name != dodoitsu.composer}">
-												<p class="text-right">
-													<object>
-														${dodoitsu.good}人から<a class="linkGood" href="Good?id=${dodoitsu.id}&genre=4">高評価</a>されました
-													</object>
-												</p>
-											</c:if>
-											<c:if test="${name == dodoitsu.composer}">
-												<p class="text-right">${dodoitsu.good}人から高評価されました</p>
-											</c:if>
-										</div>
-										<div class="col-2"></div>
-									</div>
-								</div>
-							</c:if>
-							<c:if test="${listNum.count % 2 != 0}">
-								<div class="col-md-4 col-xs-12 bg-danger shadow list zoom">
-									<div class="col-1"></div>
-										<div class="col-1">
-											<c:if test="${name == 'admin'}">
-												<a href="HaikuDelete?id=${list.id}&genre=4">
-													<input class="btn btn-warning shadow deleteHaiku" type="button" value="この歌を削除する">
-												</a>
-											</c:if>
-										</div>
-									<div class="col-1 text-left py-3 whiteWord">${dodoitsu.strComposeDate} ${dodoitsu.strComposeTime}</div>
-									<div class="col-4">
-										<p class="text-left py-3 font-weight-bold whiteWord">${dodoitsu.haiku}</p>
-										<p class="text-right whiteWord">${dodoitsu.composer}</p>
-									</div>
-									<div class="col-2 whiteWord">${dodoitsu.comment}</div>
-									<div class="col-1">
-											<c:if test="${name != dodoitsu.composer}">
-												<p class="text-right whiteWord">
-													<object>
-														${dodoitsu.good}人から<a class="linkGood" href="Good?id=${dodoitsu.id}&genre=4">高評価</a>されました
-													</object>
-												</p>
-											</c:if>
-											<c:if test="${name == dodoitsu.composer}">
-												<p class="text-right whiteWord">${dodoitsu.good}人から高評価されました</p>
-											</c:if>
-										</div>
-										<div class="col-2"></div>
-								</div>
-							</c:if>
-						</c:forEach>
-					</div>
-					<div class="bg-secondary py-2"><h2></h2></div>
 					<p><a href="#top"><input class="btn btn-secondary shadow" type="button" value="一番上へ戻る"></a></p>
 				</details>
 			</c:if>

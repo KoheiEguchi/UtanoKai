@@ -17,7 +17,7 @@
 			<jsp:include page="../include/title.jsp" flush="true" />
 			<div class="py-4">
 				<h3>ようこそ ${name}様</h3>
-				<p class="my-4"><a href="Compose"><input class="btn btn-success btn-lg shadow" type="button" value="新たに詠む"></a></p>
+				<p class="mt-3"><a href="Compose"><input class="btn btn-success btn-lg shadow" type="button" value="新たに詠む"></a></p>
 			</div>
 			<jsp:include page="../include/msg.jsp" flush="true" />
 			
@@ -25,7 +25,8 @@
 			<div class="row">
 				<div class="col-1"></div>
 				<div class="col-10">
-					<div id="newHaikus" class="bg-secondary py-2 haikusGenre"><h3 class="whiteWord">最新の歌</h3></div>
+					<div id="newHaikus" class="py-4"></div>
+					<div class="bg-secondary py-2 haikusGenre"><h3 class="whiteWord">最新の歌</h3></div>
 					<div class="row tops">
 						<div class="col-md-6 col-xs-12 order-md-2 bg-success shadow list zoom">
 							<a class="linkMenuHaiku whiteHover" href="List?genre=1">
@@ -144,9 +145,9 @@
 					</div>
 					<div class="bg-secondary py-3 haikusGenre"></div>
 					<!-- ここまで最新の歌一覧 -->
-					<div class="py-5"></div>
+					<div id="goodHaikus" class="py-4"></div>
 					<!-- ここから高評価の歌一覧 -->
-					<div id="goodHaikus" class="bg-secondary py-2 haikusGenre"><h3 class="whiteWord">評価の高い歌</h3></div>
+					<div class="bg-secondary py-2 haikusGenre"><h3 class="whiteWord">評価の高い歌</h3></div>
 					<div class="bg-success py-2 haikusGenre"><h3 class="whiteWord">俳句・川柳</h3></div>
 					<div class="row">
 						<c:forEach items="${goodHaiku}" var="haiku">
@@ -275,13 +276,17 @@
 						</c:forEach>
 					</div>
 					<div class="bg-danger py-3 haikusGenre"></div>
+					<div class="bg-secondary py-3 haikusGenre"></div>
 				</div>
 				<div class="col-1"></div>
 			</div>
 			<!-- ここまで高評価の歌一覧 -->
 			
-			<p class="my-5"><a href="Compose"><input class="btn btn-success btn-lg shadow" type="button" value="新たに詠む"></a></p>
-			<div id="description" class="row">
+			<p class="mt-5"><a href="Compose"><input class="btn btn-success btn-lg shadow" type="button" value="新たに詠む"></a></p>
+			<div id="description" class="my-2"></div>
+			<br>
+			<br>
+			<div class="row">
 				<div class="col-md-2 col-xs-1"></div>
 				<div class="col-md-8 col-xs-10">
 					<ul class="nav nav-tabs">

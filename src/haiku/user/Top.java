@@ -2,7 +2,6 @@ package haiku.user;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -63,8 +62,6 @@ public class Top extends HttpServlet {
 			//高評価の歌を取得
 			for(int genre = 1; genre <= 4; genre++) {
 				ArrayList<HaikuBean> goodHaiku = dao.goodHaiku(genre);
-				//表示用に順番を反転
-				Collections.reverse(goodHaiku);
 				switch(genre) {
 				//俳句・川柳
 				case 1:
