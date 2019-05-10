@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="css/origin/userDetail.css">
 	<jsp:include page="../include/head.jsp" flush="true" />
 	<c:if test="${composerName == null}">
 		<title>${name}様の詳細</title>
@@ -18,7 +19,7 @@
 	<div id="loaded" class="container">
 		<jsp:include page="../include/header.jsp" flush="true" />
 		<div class="main">
-			<div id="top"><jsp:include page="../include/title.jsp" flush="true" /></div>
+			<div><jsp:include page="../include/title.jsp" flush="true" /></div>
 			<jsp:include page="../include/msg.jsp" flush="true" />
 			<c:if test="${loginOk == null}">
 				<c:if test="${composerName == null}">
@@ -86,16 +87,18 @@
 						<div class="col-1"></div>
 					</div>
 				</c:forEach>
-				<details open>
-					<summary>これまで詠まれた歌</summary>
-					<div class="row">
-						<div class="col-1"></div>
-						<div class="col-10">
-							<div class="bg-secondary py-1 haikusGenre"><h3 class="whiteWord">俳句・川柳</h3></div>
+				<div class="h4 mt-4">これまで詠まれた歌(クリックで開閉)</div>
+				<div class="row">
+					<div class="col-1"></div>
+					<div class="col-10">
+						<details>
+							<summary class="noIcon">
+								<div class="bg-secondary py-1 haikusGenre userHaikus"><h3 class="whiteWord">俳句・川柳</h3></div>
+							</summary>
 							<div class="row">
 								<c:forEach items="${haikuList}" var="haiku" varStatus="listNum">
 									<c:if test="${listNum.count % 2 == 0}">
-										<div class="col-md-4 col-xs-12 bg-light shadow list zoom">
+										<div class="col-md-4 col-xs-12 bg-light shadow list">
 											<div class="row lists">
 												<div class="col-1"></div>
 												<div class="col-1">
@@ -128,7 +131,7 @@
 										</div>
 									</c:if>
 									<c:if test="${listNum.count % 2 != 0}">
-										<div class="col-md-4 col-xs-12 bg-success shadow list zoom">
+										<div class="col-md-4 col-xs-12 bg-success shadow list">
 											<div class="row lists">
 												<div class="col-1"></div>
 												<div class="col-1">
@@ -162,11 +165,15 @@
 									</c:if>
 								</c:forEach>
 							</div>
-							<div class="bg-secondary py-1 haikusGenre"><h3 class="whiteWord">短歌</h3></div>
+						</details>
+						<details>
+							<summary class="noIcon">
+								<div class="bg-secondary py-1 haikusGenre userTankas"><h3 class="whiteWord">短歌</h3></div>
+							</summary>
 							<div class="row">
 								<c:forEach items="${tankaList}" var="tanka" varStatus="listNum">
 									<c:if test="${listNum.count % 2 == 0}">
-										<div class="col-md-4 col-xs-12 bg-light shadow list zoom">
+										<div class="col-md-4 col-xs-12 bg-light shadow list">
 											<div class="row lists">
 												<div class="col-1"></div>
 												<div class="col-1">
@@ -199,7 +206,7 @@
 										</div>
 									</c:if>
 									<c:if test="${listNum.count % 2 != 0}">
-										<div class="col-md-4 col-xs-12 bg-info shadow list zoom">
+										<div class="col-md-4 col-xs-12 bg-info shadow list">
 											<div class="row lists">
 												<div class="col-1"></div>
 												<div class="col-1">
@@ -233,13 +240,16 @@
 									</c:if>
 								</c:forEach>
 							</div>
-							<div class="bg-secondary py-1 haikusGenre"><h3 class="whiteWord">長歌</h3></div>
+						</details>
+						<details>
+							<summary class="noIcon">
+								<div class="bg-secondary py-1 haikusGenre userChokas"><h3 class="whiteWord">長歌</h3></div>
+							</summary>
 							<div class="row">
 								<c:forEach items="${chokaList}" var="choka" varStatus="listNum">
 									<c:if test="${listNum.count % 2 == 0}">
-										<div class="col-md-4 col-xs-12 bg-light shadow list zoom">
+										<div class="col-md-4 col-xs-12 bg-light shadow list">
 											<div class="row lists">
-												<div class="col-1"></div>
 												<div class="col-1">
 													<c:if test="${name == 'admin'}">
 														<a href="HaikuDelete?id=${choka.id}&genre=3">
@@ -248,7 +258,7 @@
 													</c:if>
 												</div>
 												<div class="col-1 text-left py-3">${choka.strComposeDate} ${choka.strComposeTime}</div>
-												<div class="col-4">
+												<div class="col-5">
 													<p class="text-left py-3 font-weight-bold">${choka.haiku}</p>
 													<p class="text-right">${choka.composer}</p>
 												</div>
@@ -270,9 +280,8 @@
 										</div>
 									</c:if>
 									<c:if test="${listNum.count % 2 != 0}">
-										<div class="col-md-4 col-xs-12 bg-warning shadow list zoom">
+										<div class="col-md-4 col-xs-12 bg-warning shadow list">
 											<div class="row lists">
-												<div class="col-1"></div>
 												<div class="col-1">
 													<c:if test="${name == 'admin'}">
 														<a href="HaikuDelete?id=${choka.id}&genre=3">
@@ -281,7 +290,7 @@
 													</c:if>
 												</div>
 												<div class="col-1 text-left py-3">${choka.strComposeDate} ${choka.strComposeTime}</div>
-												<div class="col-4">
+												<div class="col-5">
 													<p class="text-left py-3 font-weight-bold">${choka.haiku}</p>
 													<p class="text-right">${choka.composer}</p>
 												</div>
@@ -304,11 +313,15 @@
 									</c:if>
 								</c:forEach>
 							</div>
-							<div class="bg-secondary py-1 haikusGenre"><h3 class="whiteWord">都々逸</h3></div>
+						</details>
+						<details>
+							<summary class="noIcon">
+								<div class="bg-secondary py-1 haikusGenre userDodoitsus"><h3 class="whiteWord">都々逸</h3></div>
+							</summary>
 							<div class="row">
 								<c:forEach items="${dodoitsuList}" var="dodoitsu" varStatus="listNum">
 									<c:if test="${listNum.count % 2 == 0}">
-										<div class="col-md-4 col-xs-12 bg-light shadow list zoom">
+										<div class="col-md-4 col-xs-12 bg-light shadow list">
 											<div class="row lists">
 												<div class="col-1"></div>
 												<div class="col-1">
@@ -341,7 +354,7 @@
 										</div>
 									</c:if>
 									<c:if test="${listNum.count % 2 != 0}">
-										<div class="col-md-4 col-xs-12 bg-danger shadow list zoom">
+										<div class="col-md-4 col-xs-12 bg-danger shadow list">
 											<div class="col-1"></div>
 												<div class="col-1">
 													<c:if test="${name == 'admin'}">
@@ -374,11 +387,10 @@
 								</c:forEach>
 							</div>
 							<div class="bg-secondary py-2 haikusGenre"><h2></h2></div>
-						</div>
-						<div class="col-1"></div>
+						</details>
 					</div>
-					<p><a href="#top"><input class="btn btn-secondary shadow" type="button" value="一番上へ戻る"></a></p>
-				</details>
+					<div class="col-1"></div>
+				</div>
 			</c:if>
 			<c:if test="${myData != null}">
 				<h3 class="mt-5">情報の更新</h3>

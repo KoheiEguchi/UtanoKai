@@ -3,9 +3,7 @@ package dao;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import beans.HaikuBean;
 import beans.UserBean;
-import haiku.Common;
 
 public class UserDAO extends DAOConnection{
 	//認証確認
