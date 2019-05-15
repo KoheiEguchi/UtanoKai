@@ -161,7 +161,7 @@
 											<object><a class="linkName" href="UserDetail?name=${haiku.composer}">${haiku.composer}</a></object>
 										</div>
 										<div class="col-3">${haiku.comment}</div>
-										<div class="col-1">
+										<div class="col-2">
 											<c:if test="${name != haiku.composer}">
 												<p class="text-right">
 													<object>
@@ -173,7 +173,7 @@
 												<p class="text-right">${haiku.good}人から高評価されました</p>
 											</c:if>
 										</div>
-										<div class="col-2"></div>
+										<div class="col-1"></div>
 									</a>
 								</div>
 							</div>
@@ -193,7 +193,7 @@
 											<object><a class="linkName" href="UserDetail?name=${tanka.composer}">${tanka.composer}</a></object>
 										</div>
 										<div class="col-3">${tanka.comment}</div>
-										<div class="col-1">
+										<div class="col-2">
 											<c:if test="${name != tanka.composer}">
 												<p class="text-right">
 													<object>
@@ -205,7 +205,7 @@
 												<p class="text-right">${tanka.good}人から高評価されました</p>
 											</c:if>
 										</div>
-										<div class="col-2"></div>
+										<div class="col-1"></div>
 									</a>
 								</div>
 							</div>
@@ -257,7 +257,7 @@
 											<object><a class="linkName" href="UserDetail?name=${dodoitsu.composer}">${dodoitsu.composer}</a></object>
 										</div>
 										<div class="col-3">${dodoitsu.comment}</div>
-										<div class="col-1">
+										<div class="col-2">
 											<c:if test="${name != dodoitsu.composer}">
 												<p class="text-right">
 													<object>
@@ -269,7 +269,7 @@
 												<p class="text-right">${dodoitsu.good}人から高評価されました</p>
 											</c:if>
 										</div>
-										<div class="col-2"></div>
+										<div class="col-1"></div>
 									</a>
 								</div>
 							</div>

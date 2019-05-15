@@ -51,6 +51,7 @@ summary{
 .list{
 	writing-mode: vertical-rl;
 	text-orientation: upright;
+	-webkit-text-orientation: upright;
 	float: right;
 	position: relative;
 }
@@ -74,7 +75,7 @@ summary{
 .linkGood:hover{
 	color: #f08300;
 	font-size: 120%;
-	background-color: #87cefa;
+	background-color: #000080;
 	border-radius: 10px;
 	text-decoration: none;
 }

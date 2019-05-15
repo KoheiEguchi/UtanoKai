@@ -114,7 +114,7 @@
 													<p class="text-right">${haiku.composer}</p>
 												</div>
 												<div class="col-2">${haiku.comment}</div>
-												<div class="col-1">
+												<div class="col-2">
 													<c:if test="${name != haiku.composer}">
 														<p class="text-right">
 															<object>
@@ -126,7 +126,7 @@
 														<p class="text-right">${haiku.good}人から高評価されました</p>
 													</c:if>
 												</div>
-												<div class="col-2"></div>
+												<div class="col-1"></div>
 											</div>
 										</div>
 									</c:if>
@@ -147,7 +147,7 @@
 													<p class="text-right whiteWord">${haiku.composer}</p>
 												</div>
 												<div class="col-2 whiteWord">${haiku.comment}</div>
-												<div class="col-1">
+												<div class="col-2">
 													<c:if test="${name != haiku.composer}">
 														<p class="text-right whiteWord">
 															<object>
@@ -159,7 +159,7 @@
 														<p class="text-right whiteWord">${haiku.good}人から高評価されました</p>
 													</c:if>
 												</div>
-												<div class="col-2"></div>
+												<div class="col-1"></div>
 											</div>
 										</div>
 									</c:if>
@@ -189,7 +189,7 @@
 													<p class="text-right">${tanka.composer}</p>
 												</div>
 												<div class="col-2">${tanka.comment}</div>
-												<div class="col-1">
+												<div class="col-2">
 													<c:if test="${name != tanka.composer}">
 														<p class="text-right">
 															<object>
@@ -201,7 +201,7 @@
 														<p class="text-right">${tanka.good}人から高評価されました</p>
 													</c:if>
 												</div>
-												<div class="col-2"></div>
+												<div class="col-1"></div>
 											</div>
 										</div>
 									</c:if>
@@ -222,7 +222,7 @@
 													<p class="text-right">${tanka.composer}</p>
 												</div>
 												<div class="col-2">${tanka.comment}</div>
-												<div class="col-1">
+												<div class="col-2">
 													<c:if test="${name != tanka.composer}">
 														<p class="text-right">
 															<object>
@@ -234,7 +234,7 @@
 														<p class="text-right">${tanka.good}人から高評価されました</p>
 													</c:if>
 												</div>
-												<div class="col-2"></div>
+												<div class="col-1"></div>
 											</div>
 										</div>
 									</c:if>
@@ -263,7 +263,7 @@
 													<p class="text-right">${choka.composer}</p>
 												</div>
 												<div class="col-2">${choka.comment}</div>
-												<div class="col-1">
+												<div class="col-2">
 													<c:if test="${name != choka.composer}">
 														<p class="text-right">
 															<object>
@@ -275,7 +275,7 @@
 														<p class="text-right">${choka.good}人から高評価されました</p>
 													</c:if>
 												</div>
-												<div class="col-2"></div>
+												<div class="col-1"></div>
 											</div>
 										</div>
 									</c:if>
@@ -295,7 +295,7 @@
 													<p class="text-right">${choka.composer}</p>
 												</div>
 												<div class="col-2">${choka.comment}</div>
-												<div class="col-1">
+												<div class="col-2">
 													<c:if test="${name != choka.composer}">
 														<p class="text-right">
 															<object>
@@ -307,7 +307,7 @@
 														<p class="text-right">${choka.good}人から高評価されました</p>
 													</c:if>
 												</div>
-												<div class="col-2"></div>
+												<div class="col-1"></div>
 											</div>
 										</div>
 									</c:if>
@@ -337,7 +337,7 @@
 													<p class="text-right">${dodoitsu.composer}</p>
 												</div>
 												<div class="col-2">${dodoitsu.comment}</div>
-												<div class="col-1">
+												<div class="col-2">
 													<c:if test="${name != dodoitsu.composer}">
 														<p class="text-right">
 															<object>
@@ -349,7 +349,7 @@
 														<p class="text-right">${dodoitsu.good}人から高評価されました</p>
 													</c:if>
 												</div>
-												<div class="col-2"></div>
+												<div class="col-1"></div>
 											</div>
 										</div>
 									</c:if>
@@ -369,7 +369,7 @@
 												<p class="text-right whiteWord">${dodoitsu.composer}</p>
 											</div>
 											<div class="col-2 whiteWord">${dodoitsu.comment}</div>
-											<div class="col-1">
+											<div class="col-2">
 													<c:if test="${name != dodoitsu.composer}">
 														<p class="text-right whiteWord">
 															<object>
@@ -381,7 +381,7 @@
 														<p class="text-right whiteWord">${dodoitsu.good}人から高評価されました</p>
 													</c:if>
 												</div>
-												<div class="col-2"></div>
+												<div class="col-1"></div>
 										</div>
 									</c:if>
 								</c:forEach>

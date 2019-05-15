@@ -75,7 +75,6 @@ public class Login extends HttpServlet {
 					int loginCheck = 0;
 					loginCheck = dao.loginCheck(name, safetyPassword);
 					
-					RequestDispatcher dispatcher;
 					//認証に失敗した場合
 					if(loginCheck == 0){
 						request.setAttribute("msg", "正しくお教えください。");
@@ -83,7 +82,7 @@ public class Login extends HttpServlet {
 					//成功した場合
 					}else {
 						session.setAttribute("name", name);
-						dispatcher = request.getRequestDispatcher("./Top");
+						RequestDispatcher dispatcher = request.getRequestDispatcher("./Top");
 						dispatcher.forward(request,response);
 					}
 				}
