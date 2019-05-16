@@ -14,6 +14,7 @@ public class HaikuBean {
 	private String strComposeTime;
 	private int genre;
 	private int good;
+	private String strGood;
 	
 	public HaikuBean() {
 		
@@ -30,7 +31,7 @@ public class HaikuBean {
 		this.good = good;
 	}
 	
-	public HaikuBean(int id, String haiku, String composer, String comment, String strComposeDate, String strComposeTime, int genre, int good) {
+	public HaikuBean(int id, String haiku, String composer, String comment, String strComposeDate, String strComposeTime, int genre, String strGood) {
 		this.id = id;
 		this.haiku = haiku;
 		this.composer = composer;
@@ -38,7 +39,7 @@ public class HaikuBean {
 		this.strComposeDate = strComposeDate;
 		this.strComposeTime = strComposeTime;
 		this.genre = genre;
-		this.good = good;
+		this.strGood = strGood;
 	}
 	
 	//以下アクセサ
@@ -101,5 +102,11 @@ public class HaikuBean {
 	}
 	public void setGood(int good) {
 		this.good = good;
+	}
+	public String getStrGood() {
+		return this.strGood;
+	}
+	public void setStrGood(String strGood) {
+		this.strGood = strGood;
 	}
 }

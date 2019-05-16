@@ -13,8 +13,8 @@
 			<select class="form-control" name="order">
 				<option value="new">新しい順</option>
 				<option value="old">古い順</option>
-				<option value="good">高評価順</option>
-				<option value="bad">低評価順</option>
+				<option value="good">評価の多い順</option>
+				<option value="bad">評価の少ない順</option>
 			</select>
 			<p><input class="btn btn-primary shadow mt-2" type="submit" value="並び替え"></p>
 		</div>

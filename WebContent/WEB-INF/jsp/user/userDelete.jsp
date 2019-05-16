@@ -14,7 +14,7 @@
 		<div class="main">
 			<h1 class="mt-5">退会の確認</h1>
 			<jsp:include page="../include/msg.jsp" flush="true" />
-			<h2 class="py-3">本当に<span class="delete">退会</span>されますか？</h2>
+			<h2 class="py-3">本当に<span class="h1 text-danger font-weight-bold">退会</span>されますか？</h2>
 			<form action="UserDelete" method="POST">
 				<p class="py-5"><input class="btn btn-danger btn-sm shadow" type="submit" value="退会する(元に戻せません！)"></p>
 				<p><a href="Top"><input class="btn btn-info shadow" type="button" value="戻る"></a></p>

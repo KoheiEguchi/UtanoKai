@@ -103,13 +103,6 @@ summary{
 	display: inline;
 }
 
-/*退会画面での表示*/
-.delete{
-	color: red;
-	font-size: 120%;
-	font-weight: bold;
-}
-
 /*歌の削除ボタン設定*/
 .deleteHaiku{
 	writing-mode: initial;

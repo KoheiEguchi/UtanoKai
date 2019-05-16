@@ -60,7 +60,7 @@ public class List extends HttpServlet {
 			
 			request.setAttribute("genre", genre);
 			request.setAttribute("genreName", genreName);
-			request.setAttribute("order", "新着順");
+			request.setAttribute("order", "新しい順");
 					
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user/list.jsp");
 			dispatcher.forward(request,response);
@@ -94,6 +94,10 @@ public class List extends HttpServlet {
 					request.setAttribute("order", "新しい順");
 				}else if(order.equals("old")) {
 					request.setAttribute("order", "古い順");
+				}else if(order.equals("good")) {
+					request.setAttribute("order", "評価の多い順");
+				}else if(order.equals("bad")) {
+					request.setAttribute("order", "評価の少ない順");
 				}
 			//検索の場合
 			}else {

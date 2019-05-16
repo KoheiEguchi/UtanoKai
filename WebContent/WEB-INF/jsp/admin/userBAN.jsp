@@ -51,7 +51,7 @@
 					</div>
 					<br>
 				</c:forEach>
-				<h3>この会員を<span class="delete">退会</span>させますがよろしいですか？</h3>
+				<h3>この会員を<span class="h1 text-danger font-weight-bold">退会</span>させますがよろしいですか？</h3>
 				<p class="py-5"><input class="btn btn-danger btn-sm shadow" type="submit" value="退会させる(戻せません！)"></p>
 				<p><a href="UserList"><input class="btn btn-info shadow" type="button" value="会員一覧に戻る"></a></p>
 			</form>

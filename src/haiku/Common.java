@@ -26,7 +26,6 @@ public class Common {
 		}
 		return check;
 	}
-	
 	//管理人以外の閲覧禁止
 	public static boolean adminCheck(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		HttpSession session = request.getSession();
@@ -50,49 +49,46 @@ public class Common {
 	public static String composeDateChange(ResultSet rs) throws SQLException {
 		Date composeDate = rs.getDate("compose_date");
 		String baseDate = new SimpleDateFormat("yyyy年M月d日").format(composeDate);
-		
 		//西暦を年号表記に変更
 		String date = nengouChange(baseDate);
-		
-		for(int i = 0; i < date.length(); i++) {
-			String num = date.substring(i, i + 1);
-			switch(num) {
-			case "0":
-				date = date.replace("0", "〇");
-				break;
-			case "1":
-				date = date.replace("1", "一");
-				break;
-			case "2":
-				date = date.replace("2", "二");
-				break;
-			case "3":
-				date = date.replace("3", "三");
-				break;
-			case "4":
-				date = date.replace("4", "四");
-				break;
-			case "5":
-				date = date.replace("5", "五");
-				break;
-			case "6":
-				date = date.replace("6", "六");
-				break;
-			case "7":
-				date = date.replace("7", "七");
-				break;
-			case "8":
-				date = date.replace("8", "八");
-				break;
-			case "9":
-				date = date.replace("9", "九");
-				break;
-			default:
-				break;
-			}
-		}
-		return date;
+		return numKanji(date);
 	}
+	//歌を詠んだ時刻を漢数字化
+	public static String composeTimeChange(ResultSet rs) throws SQLException{
+		Time composeTime = rs.getTime("compose_time");
+		String time = new SimpleDateFormat("k時m分").format(composeTime);
+		return numKanji(time);
+	}
+	
+	//高評価数を漢数字化
+	public static String goodChange(ResultSet rs) throws SQLException{
+		int good = rs.getInt("good");
+		String strGood = String.valueOf(good);
+		return numKanji(strGood);
+	}
+	
+	//genreからgenreNameを取得
+	public static String genreName(int genre) {
+		String genreName = "";
+		switch(genre) {
+		case 1:
+			genreName = "俳句・川柳";
+			break;
+		case 2:
+			genreName = "短歌";
+			break;
+		case 3:
+			genreName = "長歌";
+			break;
+		case 4:
+			genreName = "都々逸";
+			break;
+		}
+		return genreName;
+	}
+	
+	/*ここからメソッド内メソッド*/
+	
 	//西暦を年号表記に変更
 	private static String nengouChange(String date) {
 		String changedDate = "";
@@ -149,68 +145,48 @@ public class Common {
 		}
 		return changedDate;
 	}
-	//歌を詠んだ時刻を漢数字化
-	public static String composeTimeChange(ResultSet rs) throws SQLException{
-		Time composeTime = rs.getTime("compose_time");
-		String time = new SimpleDateFormat("k時m分").format(composeTime);
-		for(int i = 0; i < time.length(); i++) {
-			String num = time.substring(i, i + 1);
+	
+	//漢数字化処理
+	private static String numKanji(String kanjiNum) {
+		for(int i = 0; i < kanjiNum.length(); i++) {
+			String num = kanjiNum.substring(i, i + 1);
 			switch(num) {
 			case "0":
-				time = time.replace("0", "〇");
+				kanjiNum = kanjiNum.replace("0", "〇");
 				break;
 			case "1":
-				time = time.replace("1", "一");
+				kanjiNum = kanjiNum.replace("1", "一");
 				break;
 			case "2":
-				time = time.replace("2", "二");
+				kanjiNum = kanjiNum.replace("2", "二");
 				break;
 			case "3":
-				time = time.replace("3", "三");
+				kanjiNum = kanjiNum.replace("3", "三");
 				break;
 			case "4":
-				time = time.replace("4", "四");
+				kanjiNum = kanjiNum.replace("4", "四");
 				break;
 			case "5":
-				time = time.replace("5", "五");
+				kanjiNum = kanjiNum.replace("5", "五");
 				break;
 			case "6":
-				time = time.replace("6", "六");
+				kanjiNum = kanjiNum.replace("6", "六");
 				break;
 			case "7":
-				time = time.replace("7", "七");
+				kanjiNum = kanjiNum.replace("7", "七");
 				break;
 			case "8":
-				time = time.replace("8", "八");
+				kanjiNum = kanjiNum.replace("8", "八");
 				break;
 			case "9":
-				time = time.replace("9", "九");
+				kanjiNum = kanjiNum.replace("9", "九");
 				break;
 			default:
 				break;
 			}
 		}
-		return time;
+		return kanjiNum;
 	}
 	
-	//genreからgenreNameを取得
-	public static String genreName(int genre) {
-		String genreName = "";
-		switch(genre) {
-		case 1:
-			genreName = "俳句・川柳";
-			break;
-		case 2:
-			genreName = "短歌";
-			break;
-		case 3:
-			genreName = "長歌";
-			break;
-		case 4:
-			genreName = "都々逸";
-			break;
-		}
-		return genreName;
-	}
-	
+	/*ここまでメソッド内メソッド*/
 }

@@ -28,7 +28,7 @@
 									<p class="text-right">${haiku.composer}</p>
 								</div>
 								<div class="col-2">${haiku.comment}</div>
-								<div class="col-1 text-right">${haiku.good}人から高評価されました</div>
+								<div class="col-1 text-right">${haiku.strGood}人から高評価されました</div>
 								<div class="col-2"></div>
 							</div>
 						</div>

@@ -69,11 +69,11 @@
 										<div class="col-2">
 											<c:if test="${name != list.composer}">
 												<p class="text-right">
-													${list.good}人から<a class="linkGood" href="Good?id=${list.id}&genre=${genre}">高評価</a>されました
+													${list.strGood}人から<a class="linkGood" href="Good?id=${list.id}&genre=${genre}">高評価</a>されました
 												</p>
 											</c:if>
 											<c:if test="${name == list.composer}">
-												<p class="text-right">${list.good}人から高評価されました</p>
+												<p class="text-right">${list.strGood}人から高評価されました</p>
 											</c:if>
 										</div>
 										<div class="col-1"></div>
@@ -101,11 +101,11 @@
 										<div class="col-2">
 											<c:if test="${name != list.composer}">
 												<p class="text-right whiteWord">
-													${list.good}人から<a class="linkGood" href="Good?id=${list.id}&genre=${genre}">高評価</a>されました
+													${list.strGood}人から<a class="linkGood" href="Good?id=${list.id}&genre=${genre}">高評価</a>されました
 												</p>
 											</c:if>
 											<c:if test="${name == list.composer}">
-												<p class="text-right whiteWord">${list.good}人から高評価されました</p>
+												<p class="text-right whiteWord">${list.strGood}人から高評価されました</p>
 											</c:if>
 										</div>
 										<div class="col-1"></div>

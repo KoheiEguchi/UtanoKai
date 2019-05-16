@@ -25,7 +25,7 @@ public class HaikuDAO extends DAOConnection{
 				bean.setStrComposeDate(Common.composeDateChange(rs));
 				bean.setStrComposeTime(Common.composeTimeChange(rs));
 				bean.setGenre(rs.getInt("genre"));
-				bean.setGood(rs.getInt("good"));
+				bean.setStrGood(Common.goodChange(rs));
 				newHaiku.add(bean);
 			}
 		}catch(SQLException e) {
@@ -54,7 +54,7 @@ public class HaikuDAO extends DAOConnection{
 				bean.setStrComposeDate(Common.composeDateChange(rs));
 				bean.setStrComposeTime(Common.composeTimeChange(rs));
 				bean.setGenre(rs.getInt("genre"));
-				bean.setGood(rs.getInt("good"));
+				bean.setStrGood(Common.goodChange(rs));
 				goodHaiku.add(bean);
 			}
 		}catch(SQLException e) {
@@ -96,7 +96,7 @@ public class HaikuDAO extends DAOConnection{
 				bean.setComment(rs.getString("comment"));
 				bean.setStrComposeDate(Common.composeDateChange(rs));
 				bean.setStrComposeTime(Common.composeTimeChange(rs));
-				bean.setGood(rs.getInt("good"));
+				bean.setStrGood(Common.goodChange(rs));
 				list.add(bean);
 			}
 		}catch(SQLException e) {
@@ -124,7 +124,7 @@ public class HaikuDAO extends DAOConnection{
 				bean.setComment(rs.getString("comment"));
 				bean.setStrComposeDate(Common.composeDateChange(rs));
 				bean.setStrComposeTime(Common.composeTimeChange(rs));
-				bean.setGood(rs.getInt("good"));
+				bean.setStrGood(Common.goodChange(rs));
 				searchList.add(bean);
 			}
 		}catch(SQLException e) {
@@ -153,7 +153,7 @@ public class HaikuDAO extends DAOConnection{
 				bean.setComment(rs.getString("comment"));
 				bean.setStrComposeDate(Common.composeDateChange(rs));
 				bean.setStrComposeTime(Common.composeTimeChange(rs));
-				bean.setGood(rs.getInt("good"));
+				bean.setStrGood(Common.goodChange(rs));
 				haikuList.add(bean);
 			}
 		}catch(SQLException e) {
@@ -212,7 +212,7 @@ public class HaikuDAO extends DAOConnection{
 				bean.setComment(rs.getString("comment"));
 				bean.setStrComposeDate(Common.composeDateChange(rs));
 				bean.setStrComposeTime(Common.composeTimeChange(rs));
-				bean.setGood(rs.getInt("good"));
+				bean.setStrGood(Common.goodChange(rs));
 				deleteHaiku.add(bean);
 			}
 		}catch(SQLException e) {
