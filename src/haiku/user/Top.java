@@ -34,7 +34,8 @@ public class Top extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//認証無しでの閲覧禁止
-		if(Common.loginCheck(request, response) == true) {
+		Common common = new Common();
+		if(common.loginCheck(request, response) == true) {
 			//最新の歌を取得
 			HaikuDAO dao = new HaikuDAO();
 			for(int genre = 1; genre <= 4; genre++) {

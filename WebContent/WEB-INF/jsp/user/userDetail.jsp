@@ -93,7 +93,7 @@
 					<div class="col-10">
 						<details>
 							<summary class="noIcon">
-								<div class="bg-secondary py-1 haikusGenre userHaikus"><h3 class="whiteWord">俳句・川柳</h3></div>
+								<div class="bg-secondary py-1 zoom haikusGenre userHaikus"><h3 class="whiteWord">俳句・川柳</h3></div>
 							</summary>
 							<div class="row">
 								<c:forEach items="${haikuList}" var="haiku" varStatus="listNum">
@@ -168,7 +168,7 @@
 						</details>
 						<details>
 							<summary class="noIcon">
-								<div class="bg-secondary py-1 haikusGenre userTankas"><h3 class="whiteWord">短歌</h3></div>
+								<div class="bg-secondary py-1 zoom haikusGenre userTankas"><h3 class="whiteWord">短歌</h3></div>
 							</summary>
 							<div class="row">
 								<c:forEach items="${tankaList}" var="tanka" varStatus="listNum">
@@ -243,7 +243,7 @@
 						</details>
 						<details>
 							<summary class="noIcon">
-								<div class="bg-secondary py-1 haikusGenre userChokas"><h3 class="whiteWord">長歌</h3></div>
+								<div class="bg-secondary py-1 zoom haikusGenre userChokas"><h3 class="whiteWord">長歌</h3></div>
 							</summary>
 							<div class="row">
 								<c:forEach items="${chokaList}" var="choka" varStatus="listNum">
@@ -316,7 +316,7 @@
 						</details>
 						<details>
 							<summary class="noIcon">
-								<div class="bg-secondary py-1 haikusGenre userDodoitsus"><h3 class="whiteWord">都々逸</h3></div>
+								<div class="bg-secondary py-1 zoom haikusGenre userDodoitsus"><h3 class="whiteWord">都々逸</h3></div>
 							</summary>
 							<div class="row">
 								<c:forEach items="${dodoitsuList}" var="dodoitsu" varStatus="listNum">

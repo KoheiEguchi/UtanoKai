@@ -64,7 +64,8 @@ public class UserCreate extends HttpServlet {
 			}else {
 				password = password1;
 				//合言葉に英数字以外が使われている場合
-				if(Common.passwordJpCheck(password) == false) {
+				Common common = new Common();
+				if(common.passwordJpCheck(password) == false) {
 					request.setAttribute("msg", "合言葉には英数字以外使えません。");
 					doGet(request, response);
 				//英数字のみの場合

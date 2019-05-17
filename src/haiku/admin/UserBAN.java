@@ -34,9 +34,10 @@ public class UserBAN extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//認証無しでの閲覧禁止
-		if(Common.loginCheck(request, response) == true) {
+		Common common = new Common();
+		if(common.loginCheck(request, response) == true) {
 			//管理人以外の閲覧禁止
-			if(Common.adminCheck(request, response) == true) {
+			if(common.adminCheck(request, response) == true) {
 				String strId = request.getParameter("id");
 				int id = Integer.parseInt(strId);
 				UserDAO dao = new UserDAO();

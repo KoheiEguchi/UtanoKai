@@ -21,6 +21,9 @@ import haiku.Common;
 @WebServlet("/List")
 public class List extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	//genreName取得メソッド用
+	Common common = new Common();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -36,7 +39,7 @@ public class List extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		//認証無しでの閲覧禁止
-		if(Common.loginCheck(request, response) == true) {
+		if(common.loginCheck(request, response) == true) {
 			int genre = 0;
 			//歌の削除または高評価から戻ってきた場合
 			if(session.getAttribute("genre") != null) {
@@ -56,7 +59,7 @@ public class List extends HttpServlet {
 			request.setAttribute("list", list);
 			
 			//genreからgenreNameを取得
-			String genreName = Common.genreName(genre);
+			String genreName = common.genreName(genre);
 			
 			request.setAttribute("genre", genre);
 			request.setAttribute("genreName", genreName);
@@ -115,7 +118,7 @@ public class List extends HttpServlet {
 			}
 			
 			//genreからgenreNameを取得
-			String genreName = Common.genreName(genre);
+			String genreName = common.genreName(genre);
 			
 			request.setAttribute("genre", genre);
 			request.setAttribute("genreName", genreName);

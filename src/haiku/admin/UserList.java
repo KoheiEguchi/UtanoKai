@@ -35,9 +35,10 @@ public class UserList extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//認証無しでの閲覧禁止
-		if(Common.loginCheck(request, response) == true) {
+		Common common = new Common();
+		if(common.loginCheck(request, response) == true) {
 			//管理人以外の閲覧禁止
-			if(Common.adminCheck(request, response) == true) {
+			if(common.adminCheck(request, response) == true) {
 				UserDAO dao = new UserDAO();
 				//全会員を取得
 				ArrayList<UserBean> userList = dao.allUser();

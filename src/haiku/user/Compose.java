@@ -32,7 +32,8 @@ public class Compose extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//認証無しでの閲覧禁止
-		if(Common.loginCheck(request, response) == true) {
+		Common common = new Common();
+		if(common.loginCheck(request, response) == true) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user/compose.jsp");
 			dispatcher.forward(request,response);
 		}

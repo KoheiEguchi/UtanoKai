@@ -22,10 +22,10 @@ public class HaikuDAO extends DAOConnection{
 				bean.setHaiku(rs.getString("haiku"));
 				bean.setComposer(rs.getString("composer"));
 				bean.setComment(rs.getString("comment"));
-				bean.setStrComposeDate(Common.composeDateChange(rs));
-				bean.setStrComposeTime(Common.composeTimeChange(rs));
+				bean.setStrComposeDate(common.composeDateChange(rs));
+				bean.setStrComposeTime(common.composeTimeChange(rs));
 				bean.setGenre(rs.getInt("genre"));
-				bean.setStrGood(Common.goodChange(rs));
+				bean.setStrGood(common.goodChange(rs));
 				newHaiku.add(bean);
 			}
 		}catch(SQLException e) {
@@ -51,10 +51,10 @@ public class HaikuDAO extends DAOConnection{
 				bean.setHaiku(rs.getString("haiku"));
 				bean.setComposer(rs.getString("composer"));
 				bean.setComment(rs.getString("comment"));
-				bean.setStrComposeDate(Common.composeDateChange(rs));
-				bean.setStrComposeTime(Common.composeTimeChange(rs));
+				bean.setStrComposeDate(common.composeDateChange(rs));
+				bean.setStrComposeTime(common.composeTimeChange(rs));
 				bean.setGenre(rs.getInt("genre"));
-				bean.setStrGood(Common.goodChange(rs));
+				bean.setStrGood(common.goodChange(rs));
 				goodHaiku.add(bean);
 			}
 		}catch(SQLException e) {
@@ -94,9 +94,9 @@ public class HaikuDAO extends DAOConnection{
 				bean.setHaiku(rs.getString("haiku"));
 				bean.setComposer(rs.getString("composer"));
 				bean.setComment(rs.getString("comment"));
-				bean.setStrComposeDate(Common.composeDateChange(rs));
-				bean.setStrComposeTime(Common.composeTimeChange(rs));
-				bean.setStrGood(Common.goodChange(rs));
+				bean.setStrComposeDate(common.composeDateChange(rs));
+				bean.setStrComposeTime(common.composeTimeChange(rs));
+				bean.setStrGood(common.goodChange(rs));
 				list.add(bean);
 			}
 		}catch(SQLException e) {
@@ -122,9 +122,9 @@ public class HaikuDAO extends DAOConnection{
 				bean.setHaiku(rs.getString("haiku"));
 				bean.setComposer(rs.getString("composer"));
 				bean.setComment(rs.getString("comment"));
-				bean.setStrComposeDate(Common.composeDateChange(rs));
-				bean.setStrComposeTime(Common.composeTimeChange(rs));
-				bean.setStrGood(Common.goodChange(rs));
+				bean.setStrComposeDate(common.composeDateChange(rs));
+				bean.setStrComposeTime(common.composeTimeChange(rs));
+				bean.setStrGood(common.goodChange(rs));
 				searchList.add(bean);
 			}
 		}catch(SQLException e) {
@@ -151,9 +151,9 @@ public class HaikuDAO extends DAOConnection{
 				bean.setHaiku(rs.getString("haiku"));
 				bean.setComposer(rs.getString("composer"));
 				bean.setComment(rs.getString("comment"));
-				bean.setStrComposeDate(Common.composeDateChange(rs));
-				bean.setStrComposeTime(Common.composeTimeChange(rs));
-				bean.setStrGood(Common.goodChange(rs));
+				bean.setStrComposeDate(common.composeDateChange(rs));
+				bean.setStrComposeTime(common.composeTimeChange(rs));
+				bean.setStrGood(common.goodChange(rs));
 				haikuList.add(bean);
 			}
 		}catch(SQLException e) {
@@ -210,9 +210,9 @@ public class HaikuDAO extends DAOConnection{
 				bean.setHaiku(rs.getString("haiku"));
 				bean.setComposer(rs.getString("composer"));
 				bean.setComment(rs.getString("comment"));
-				bean.setStrComposeDate(Common.composeDateChange(rs));
-				bean.setStrComposeTime(Common.composeTimeChange(rs));
-				bean.setStrGood(Common.goodChange(rs));
+				bean.setStrComposeDate(common.composeDateChange(rs));
+				bean.setStrComposeTime(common.composeTimeChange(rs));
+				bean.setStrGood(common.goodChange(rs));
 				deleteHaiku.add(bean);
 			}
 		}catch(SQLException e) {

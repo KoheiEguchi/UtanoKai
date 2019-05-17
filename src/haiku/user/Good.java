@@ -34,7 +34,8 @@ public class Good extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		//認証無しでの閲覧禁止
-		if(Common.loginCheck(request, response) == true) {
+		Common common = new Common();
+		if(common.loginCheck(request, response) == true) {
 			String strId = request.getParameter("id");
 			int id = Integer.parseInt(strId);
 			

@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 
 public class Common {
 	//認証無しでの閲覧禁止
-	public static boolean loginCheck(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public boolean loginCheck(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		HttpSession session = request.getSession();
 		boolean check = false;
 		if(session.getAttribute("name") == null) {
@@ -27,7 +27,7 @@ public class Common {
 		return check;
 	}
 	//管理人以外の閲覧禁止
-	public static boolean adminCheck(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+	public boolean adminCheck(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		HttpSession session = request.getSession();
 		boolean check = false;
 		if(!(session.getAttribute("name").equals("admin"))) {
@@ -40,35 +40,41 @@ public class Common {
 	}
 	
 	//合言葉に英数字以外が使われていないか確認
-	public static boolean passwordJpCheck(String password) {
+	public boolean passwordJpCheck(String password) {
 		boolean check = Pattern.matches("^[0-9a-zA-Z]+$", password);
 		return check;
 	}
 	
 	//歌を詠んだ日付を漢数字化
-	public static String composeDateChange(ResultSet rs) throws SQLException {
+	public String composeDateChange(ResultSet rs) throws SQLException {
 		Date composeDate = rs.getDate("compose_date");
 		String baseDate = new SimpleDateFormat("yyyy年M月d日").format(composeDate);
 		//西暦を年号表記に変更
 		String date = nengouChange(baseDate);
-		return numKanji(date);
+		//高評価数でないのでfalse
+		boolean noGood = false;
+		return numKanji(date, noGood);
 	}
 	//歌を詠んだ時刻を漢数字化
-	public static String composeTimeChange(ResultSet rs) throws SQLException{
+	public String composeTimeChange(ResultSet rs) throws SQLException{
 		Time composeTime = rs.getTime("compose_time");
 		String time = new SimpleDateFormat("k時m分").format(composeTime);
-		return numKanji(time);
+		//高評価数でないのでfalse
+		boolean noGood = false;
+		return numKanji(time, noGood);
 	}
 	
 	//高評価数を漢数字化
-	public static String goodChange(ResultSet rs) throws SQLException{
+	public String goodChange(ResultSet rs) throws SQLException{
 		int good = rs.getInt("good");
 		String strGood = String.valueOf(good);
-		return numKanji(strGood);
+		//高評価数なのでtrue
+		boolean noGood = true;
+		return numKanji(strGood, noGood);
 	}
 	
 	//genreからgenreNameを取得
-	public static String genreName(int genre) {
+	public String genreName(int genre) {
 		String genreName = "";
 		switch(genre) {
 		case 1:
@@ -90,7 +96,7 @@ public class Common {
 	/*ここからメソッド内メソッド*/
 	
 	//西暦を年号表記に変更
-	private static String nengouChange(String date) {
+	private String nengouChange(String date) {
 		String changedDate = "";
 		
 		int toshi = date.indexOf("年");
@@ -147,12 +153,18 @@ public class Common {
 	}
 	
 	//漢数字化処理
-	private static String numKanji(String kanjiNum) {
+	private String numKanji(String kanjiNum, boolean noGood) {
 		for(int i = 0; i < kanjiNum.length(); i++) {
 			String num = kanjiNum.substring(i, i + 1);
 			switch(num) {
 			case "0":
-				kanjiNum = kanjiNum.replace("0", "〇");
+				//高評価数が0の場合
+				if(noGood == true && i == 0) {
+					kanjiNum = "noGood";
+				//それ以外の場合
+				}else {
+					kanjiNum = kanjiNum.replace("0", "〇");
+				}
 				break;
 			case "1":
 				kanjiNum = kanjiNum.replace("1", "一");

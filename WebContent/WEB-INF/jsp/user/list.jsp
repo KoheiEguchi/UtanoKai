@@ -68,12 +68,22 @@
 										<div class="col-2">${list.comment}</div>
 										<div class="col-2">
 											<c:if test="${name != list.composer}">
-												<p class="text-right">
-													${list.strGood}人から<a class="linkGood" href="Good?id=${list.id}&genre=${genre}">高評価</a>されました
-												</p>
+												<c:if test="${list.strGood == 'noGood'}">
+													まだ<a class="linkGood" href="Good?id=${list.id}&genre=${genre}">高評価</a>されていません
+												</c:if>
+												<c:if test="${list.strGood != 'noGood'}">
+													<p class="text-right">
+														${list.strGood}人から<a class="linkGood" href="Good?id=${list.id}&genre=${genre}">高評価</a>されました
+													</p>
+												</c:if>
 											</c:if>
 											<c:if test="${name == list.composer}">
-												<p class="text-right">${list.strGood}人から高評価されました</p>
+												<c:if test="${list.strGood == 'noGood'}">
+													<p class="text-right">まだ高評価されていません</p>
+												</c:if>
+												<c:if test="${list.strGood != 'noGood'}">
+													<p class="text-right">${list.strGood}人から高評価されました</p>
+												</c:if>
 											</c:if>
 										</div>
 										<div class="col-1"></div>
@@ -100,12 +110,24 @@
 										<div class="col-2 whiteWord">${list.comment}</div>
 										<div class="col-2">
 											<c:if test="${name != list.composer}">
-												<p class="text-right whiteWord">
-													${list.strGood}人から<a class="linkGood" href="Good?id=${list.id}&genre=${genre}">高評価</a>されました
-												</p>
+												<c:if test="${list.strGood == 'noGood'}">
+													<p class="text-right whiteWord">
+														まだ<a class="linkGood" href="Good?id=${list.id}&genre=${genre}">高評価</a>されていません
+													</p>
+												</c:if>
+												<c:if test="${list.strGood != 'noGood'}">
+													<p class="text-right whiteWord">
+														${list.strGood}人から<a class="linkGood" href="Good?id=${list.id}&genre=${genre}">高評価</a>されました
+													</p>
+												</c:if>
 											</c:if>
 											<c:if test="${name == list.composer}">
-												<p class="text-right whiteWord">${list.strGood}人から高評価されました</p>
+												<c:if test="${list.strGood == 'noGood'}">
+													<p class="text-right whiteWord">まだ高評価されていません</p>
+												</c:if>
+												<c:if test="${list.strGood != 'noGood'}">
+													<p class="text-right whiteWord">${list.strGood}人から高評価されました</p>
+												</c:if>
 											</c:if>
 										</div>
 										<div class="col-1"></div>

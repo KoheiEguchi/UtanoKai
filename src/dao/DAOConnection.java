@@ -6,11 +6,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import haiku.Common;
+
 public class DAOConnection {
 	public static Connection conn = null;
 	public static PreparedStatement ps = null;
 	
 	public static ResultSet rs = null;
+	
+	Common common = new Common();
 	
 	//DB起動
 	public static Connection getConnection() {

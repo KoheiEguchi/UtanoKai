@@ -39,7 +39,8 @@ public class UserDetail extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		//認証無しでの閲覧禁止
-		if(Common.loginCheck(request, response) == true) {
+		Common common = new Common();
+		if(common.loginCheck(request, response) == true) {
 			String name = request.getParameter("name");
 			//情報変更から戻ってきた場合
 			if(name == "") {
@@ -155,7 +156,8 @@ public class UserDetail extends HttpServlet {
 					if(password1.equals(password2)) {
 						password = password1;
 						//合言葉に英数字以外が使われている場合
-						if(Common.passwordJpCheck(password) == false) {
+						Common common = new Common();
+						if(common.passwordJpCheck(password) == false) {
 							request.setAttribute("msg", "合言葉には英数字以外使えません。");
 							doGet(request, response);
 						//英数字のみの場合
