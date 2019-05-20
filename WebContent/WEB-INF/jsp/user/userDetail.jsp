@@ -118,12 +118,22 @@
 													<c:if test="${name != haiku.composer}">
 														<p class="text-right">
 															<object>
-																${haiku.strGood}人から<a class="linkGood" href="Good?id=${haiku.id}&genre=1">高評価</a>されました
+																<c:if test="${haiku.strGood == 'noGood'}">
+																	まだ<a class="linkGood" href="Good?id=${haiku.id}&genre=1">高評価</a>されていません
+																</c:if>
+																<c:if test="${haiku.strGood != 'noGood'}">
+																	${haiku.strGood}人から<a class="linkGood" href="Good?id=${haiku.id}&genre=1">高評価</a>されました
+																</c:if>
 															</object>
 														</p>
 													</c:if>
 													<c:if test="${name == haiku.composer}">
-														<p class="text-right">${haiku.strGood}人から高評価されました</p>
+														<c:if test="${haiku.strGood == 'noGood'}">
+															<p class="text-right">まだ高評価されていません</p>
+														</c:if>
+														<c:if test="${haiku.strGood != 'noGood'}">
+															<p class="text-right">${haiku.strGood}人から高評価されました</p>
+														</c:if>
 													</c:if>
 												</div>
 												<div class="col-1"></div>
@@ -151,12 +161,22 @@
 													<c:if test="${name != haiku.composer}">
 														<p class="text-right whiteWord">
 															<object>
-																${haiku.strGood}人から<a class="linkGood" href="Good?id=${haiku.id}&genre=1">高評価</a>されました
+																<c:if test="${haiku.strGood == 'noGood'}">
+																	まだ<a class="linkGood" href="Good?id=${haiku.id}&genre=1">高評価</a>されていません
+																</c:if>
+																<c:if test="${haiku.strGood != 'noGood'}">
+																	${haiku.strGood}人から<a class="linkGood" href="Good?id=${haiku.id}&genre=1">高評価</a>されました
+																</c:if>
 															</object>
 														</p>
 													</c:if>
 													<c:if test="${name == haiku.composer}">
-														<p class="text-right whiteWord">${haiku.strGood}人から高評価されました</p>
+														<c:if test="${haiku.strGood == 'noGood'}">
+															<p class="text-right whiteWord">まだ高評価されていません</p>
+														</c:if>
+														<c:if test="${haiku.strGood != 'noGood'}">
+															<p class="text-right whiteWord">${haiku.strGood}人から高評価されました</p>
+														</c:if>
 													</c:if>
 												</div>
 												<div class="col-1"></div>
@@ -193,12 +213,22 @@
 													<c:if test="${name != tanka.composer}">
 														<p class="text-right">
 															<object>
-																${tanka.strGood}人から<a class="linkGood" href="Good?id=${tanka.id}&genre=2">高評価</a>されました
+																<c:if test="${tanka.strGood == 'noGood'}">
+																	まだ<a class="linkGood" href="Good?id=${tanka.id}&genre=2">高評価</a>されていません
+																</c:if>
+																<c:if test="${tanka.strGood != 'noGood'}">
+																	${tanka.strGood}人から<a class="linkGood" href="Good?id=${tanka.id}&genre=2">高評価</a>されました
+																</c:if>
 															</object>
 														</p>
 													</c:if>
 													<c:if test="${name == tanka.composer}">
-														<p class="text-right">${tanka.strGood}人から高評価されました</p>
+														<c:if test="${tanka.strGood == 'noGood'}">
+															<p class="text-right">まだ高評価されていません</p>
+														</c:if>
+														<c:if test="${tanka.strGood != 'noGood'}">
+															<p class="text-right">${tanka.strGood}人から高評価されました</p>
+														</c:if>
 													</c:if>
 												</div>
 												<div class="col-1"></div>
@@ -226,12 +256,22 @@
 													<c:if test="${name != tanka.composer}">
 														<p class="text-right">
 															<object>
-																${tanka.strGood}人から<a class="linkGood" href="Good?id=${tanka.id}&genre=2">高評価</a>されました
+																<c:if test="${tanka.strGood == 'noGood'}">
+																	まだ<a class="linkGood" href="Good?id=${tanka.id}&genre=2">高評価</a>されていません
+																</c:if>
+																<c:if test="${tanka.strGood != 'noGood'}">
+																	${tanka.strGood}人から<a class="linkGood" href="Good?id=${tanka.id}&genre=2">高評価</a>されました
+																</c:if>
 															</object>
 														</p>
 													</c:if>
 													<c:if test="${name == tanka.composer}">
-														<p class="text-right">${tanka.strGood}人から高評価されました</p>
+														<c:if test="${tanka.strGood == 'noGood'}">
+															<p class="text-right">まだ高評価されていません</p>
+														</c:if>
+														<c:if test="${tanka.strGood != 'noGood'}">
+															<p class="text-right">${tanka.strGood}人から高評価されました</p>
+														</c:if>
 													</c:if>
 												</div>
 												<div class="col-1"></div>
@@ -267,12 +307,22 @@
 													<c:if test="${name != choka.composer}">
 														<p class="text-right">
 															<object>
-																${choka.strGood}人から<a class="linkGood" href="Good?id=${choka.id}&genre=3">高評価</a>されました
+																<c:if test="${choka.strGood == 'noGood'}">
+																	まだ<a class="linkGood" href="Good?id=${choka.id}&genre=3">高評価</a>されていません
+																</c:if>
+																<c:if test="${choka.strGood != 'noGood'}">
+																	${choka.strGood}人から<a class="linkGood" href="Good?id=${choka.id}&genre=3">高評価</a>されました
+																</c:if>
 															</object>
 														</p>
 													</c:if>
 													<c:if test="${name == choka.composer}">
-														<p class="text-right">${choka.strGood}人から高評価されました</p>
+														<c:if test="${choka.strGood == 'noGood'}">
+															<p class="text-right">まだ高評価されていません</p>
+														</c:if>
+														<c:if test="${choka.strGood != 'noGood'}">
+															<p class="text-right">${choka.strGood}人から高評価されました</p>
+														</c:if>
 													</c:if>
 												</div>
 												<div class="col-1"></div>
@@ -299,12 +349,22 @@
 													<c:if test="${name != choka.composer}">
 														<p class="text-right">
 															<object>
-																${choka.strGood}人から<a class="linkGood" href="Good?id=${choka.id}&genre=3">高評価</a>されました
+																<c:if test="${choka.strGood == 'noGood'}">
+																	まだ<a class="linkGood" href="Good?id=${choka.id}&genre=3">高評価</a>されていません
+																</c:if>
+																<c:if test="${choka.strGood != 'noGood'}">
+																	${choka.strGood}人から<a class="linkGood" href="Good?id=${choka.id}&genre=3">高評価</a>されました
+																</c:if>
 															</object>
 														</p>
 													</c:if>
 													<c:if test="${name == choka.composer}">
-														<p class="text-right">${choka.strGood}人から高評価されました</p>
+														<c:if test="${choka.strGood == 'noGood'}">
+															<p class="text-right">まだ高評価されていません</p>
+														</c:if>
+														<c:if test="${choka.strGood != 'noGood'}">
+															<p class="text-right">${choka.strGood}人から高評価されました</p>
+														</c:if>
 													</c:if>
 												</div>
 												<div class="col-1"></div>
@@ -341,12 +401,22 @@
 													<c:if test="${name != dodoitsu.composer}">
 														<p class="text-right">
 															<object>
-																${dodoitsu.strGood}人から<a class="linkGood" href="Good?id=${dodoitsu.id}&genre=4">高評価</a>されました
+																<c:if test="${dodoitsu.strGood == 'noGood'}">
+																	まだ<a class="linkGood" href="Good?id=${dodoitsu.id}&genre=4">高評価</a>されていません
+																</c:if>
+																<c:if test="${dodoitsu.strGood != 'noGood'}">
+																	${dodoitsu.strGood}人から<a class="linkGood" href="Good?id=${dodoitsu.id}&genre=4">高評価</a>されました
+																</c:if>
 															</object>
 														</p>
 													</c:if>
 													<c:if test="${name == dodoitsu.composer}">
-														<p class="text-right">${dodoitsu.strGood}人から高評価されました</p>
+														<c:if test="${dodoitsu.strGood == 'noGood'}">
+															<p class="text-right">まだ高評価されていません</p>
+														</c:if>
+														<c:if test="${dodoitsu.strGood != 'noGood'}">
+															<p class="text-right">${dodoitsu.strGood}人から高評価されました</p>
+														</c:if>
 													</c:if>
 												</div>
 												<div class="col-1"></div>
@@ -373,12 +443,22 @@
 													<c:if test="${name != dodoitsu.composer}">
 														<p class="text-right whiteWord">
 															<object>
-																${dodoitsu.strGood}人から<a class="linkGood" href="Good?id=${dodoitsu.id}&genre=4">高評価</a>されました
+																<c:if test="${dodoitsu.strGood == 'noGood'}">
+																	まだ<a class="linkGood" href="Good?id=${dodoitsu.id}&genre=4">高評価</a>されていません
+																</c:if>
+																<c:if test="${dodoitsu.strGood != 'noGood'}">
+																	${dodoitsu.strGood}人から<a class="linkGood" href="Good?id=${dodoitsu.id}&genre=4">高評価</a>されました
+																</c:if>
 															</object>
 														</p>
 													</c:if>
 													<c:if test="${name == dodoitsu.composer}">
-														<p class="text-right whiteWord">${dodoitsu.strGood}人から高評価されました</p>
+														<c:if test="${dodoitsu.strGood == 'noGood'}">
+															<p class="text-right whiteWord">まだ高評価されていません</p>
+														</c:if>
+														<c:if test="${dodoitsu.strGood != 'noGood'}">
+															<p class="text-right whiteWord">${dodoitsu.strGood}人から高評価されました</p>
+														</c:if>
 													</c:if>
 												</div>
 												<div class="col-1"></div>

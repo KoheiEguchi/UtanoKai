@@ -99,10 +99,12 @@ public class Common {
 	private String nengouChange(String date) {
 		String changedDate = "";
 		
+		//年、月、日それぞれの位置を取得
 		int toshi = date.indexOf("年");
 		int tsuki = date.indexOf("月");
 		int hi = date.indexOf("日");
 		
+		//年月日の各数字部分を取得
 		String strYear = date.substring(0, toshi);
 		int year = Integer.parseInt(strYear);
 		String strMonth = date.substring(toshi + 1, tsuki);
