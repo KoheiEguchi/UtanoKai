@@ -16,7 +16,7 @@
 		<div class="main">
 			<jsp:include page="../include/title.jsp" flush="true" />
 			<div class="py-4">
-				<h3>ようこそ ${name}様</h3>あ
+				<h3>ようこそ ${name}様</h3>
 				<p class="mt-3"><a href="Compose"><input class="btn btn-success btn-lg shadow" type="button" value="新たに詠む"></a></p>
 			</div>
 			<jsp:include page="../include/msg.jsp" flush="true" />
